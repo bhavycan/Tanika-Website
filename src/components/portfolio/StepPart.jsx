@@ -1,0 +1,94 @@
+import { motion } from 'framer-motion'
+
+import React, { useEffect, useState } from 'react'
+
+const StepPart = () => {
+    const [ishover, sethover] = useState(null)
+    const flats = [
+        {
+          name: "Malabar Exotica",
+          location: "Ahmedabad",
+          year: 2002,
+          image: "https://images.unsplash.com/photo-1572120360610-d971b9b78830"
+        },
+        {
+          name: "Skyline Heights",
+          location: "Bangalore",
+          year: 2015,
+          image: "https://images.unsplash.com/photo-1599423300746-b62533397364"
+        },
+        {
+          name: "Green Valley",
+          location: "Pune",
+          year: 2010,
+          image: "https://images.unsplash.com/photo-1501183638710-841dd1904471"
+        },
+        {
+          name: "Oceanview",
+          location: "Mumbai",
+          year: 2018,
+          image: "https://images.unsplash.com/photo-1565182999561-18d7dc61bb0b"
+        },
+        {
+          name: "Serenity",
+          location: "Hyderabad",
+          year: 2020,
+          image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+        }
+      ];
+      
+   
+  return (
+    
+    <div className="main w-full  flex flex-col mb-[20vh]">
+
+    {
+        flats.map((item, index) => (
+          <motion.div
+            key={index}
+            onHoverStart={() => sethover(index)}
+           
+            onHoverEnd={() => sethover(null)}
+            className="steps-part w-full h-[12vw] mt-5    flex items-center relative px-12 py-2"
+          >
+            <div className="name  w-[50%] h-full ">
+              <motion.h1 
+              whileHover={{scale : 1.1, transformOrigin : "left", opacity : 1}}
+              className="w-full h-full opacity-80  text-[3vw] flex items-center">
+                {item.name}
+              </motion.h1>
+              <motion.div
+               initial= {{ scaleX : 0,transformOrigin : "left", opacity : 0}}
+               whileInView={{scaleX : .82, opacity: 1 }}
+               transition={{duration: .8, ease: "easeInOut"}}
+              
+              className="line w-full h-[2px] bg-black opacity-80"></motion.div>
+            </div>
+            <div className="location-year w-[50%] h-full  items-end flex flex-col justify-center">
+              <h2 className="text-[2vw]">{item.location}</h2>
+              <h3 className="text-[1vw]">{item.year}</h3>
+            </div>
+      
+            <motion.div
+              initial={{ opacity: 0, pointerEvents: "none" }}
+              animate={{
+                opacity: ishover === index ? 1 : 0,
+                pointerEvents: ishover === index ? "auto" : "none",
+                
+                
+              }}
+              className="z-20 card w-[25vw] absolute rounded-md overflow-hidden shadow-2xl h-[35vw] left-[53%] bg-red-800"
+            >
+
+<img src={item.image} alt="" className='w-full h-full object-cover' />
+            </motion.div>
+           
+          </motion.div>
+        ))
+      }
+      </div>
+   
+  )
+}
+
+export default StepPart
