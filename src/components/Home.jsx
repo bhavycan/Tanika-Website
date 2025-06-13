@@ -195,7 +195,7 @@ const Home = () => {
       </div>
       <AnimatePresence >
       {menuOpen && (
-              <div className="menu-container w-[30%] h-[95vh]  absolute z-50 top-0 left-0">
+              <div className={`menu-container ${isMobile ? "w-[89%] h-[85vh] " : "w-[30%] h-[95vh] " }    absolute z-50 top-0 left-0`}>
                 <Menubar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
               </div>
             )}

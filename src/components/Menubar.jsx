@@ -1,8 +1,9 @@
 import { motion, AnimatePresence } from "framer-motion";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Menubar = ({ menuOpen, setMenuOpen }) => {
   const pageName = ["Portfolio", "Services", "Partners", "Quote"];
+   const [isMobile, setIsMobile] = useState(false);
   const slicer = (name) => {
     const arr = [];
     for (let index = 0; index < name.length; index++) {
@@ -10,6 +11,23 @@ const Menubar = ({ menuOpen, setMenuOpen }) => {
     }
     return arr;
   };
+
+
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 480);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+     return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  },[])
+
+
   return (
     
     <motion.div
@@ -18,7 +36,7 @@ const Menubar = ({ menuOpen, setMenuOpen }) => {
       animate={{ x: 0, opacity: 1, zIndex: 50 }}
       exit={{ x: -100, opacity: 0, transition: { duration: 1 } }}
       transition={{ duration: 1.5, ease: [0.68, -0.6, 0.32, 1.6], delay: 0.2 }}
-      className={` text-black absolute z-50  overflow-hidden  top-5  w-[100%] h-[100%] pl-4 pt-4 rounded-xl  ml-5 menu-container bg-red-100`}
+      className={` text-black absolute z-50  overflow-hidden  top-5  w-[100%] h-[100%] ${isMobile ? "pl-0" :"pl-4" }  pt-4 rounded-xl  ml-5 menu-container bg-red-100`}
     >
       <div className="menu w-full h-full absolute -z-10 bg-green-500 top-0 left-0">
         <img
@@ -39,12 +57,12 @@ const Menubar = ({ menuOpen, setMenuOpen }) => {
           onClick={() => setMenuOpen(false)}
           className="ml-10 absolute   right-0 top-5 mr-[2vw] w-12 h-12 shadow-lg flex items-center justify-center rounded-full "
         >
-          <i className="ri-close-line text-[3vw]"></i>
+          <i className={`ri-close-line  ${isMobile ? "text-[6vw]" : "text-[3vw]"} `}></i>
         </motion.div>
 
         <motion.div
           whileTap={{ scale: 1.2, transition: { duration: 0.5 } }}
-          className="menu flex items-center text-[1.vw] gap-2 ml-5 mt-3"
+          className={`menu flex items-center  ${isMobile ? "text-[6vw]" : "text-[1.5vw]"}  gap-2 ml-5 mt-3`}
         >
           <i className={`ri-menu-line text-black font-semibold `}></i>
           <h2 className={`text-black uppercase font-semibold `}>Menu</h2>
@@ -60,20 +78,20 @@ const Menubar = ({ menuOpen, setMenuOpen }) => {
                 >
                   <motion.h1
                     whileHover={{ y: -10, x: 10 }}
-                    className=" h-full w-[100%]  text-[5vw]  flex items-center "
+                    className={` h-full w-[100%]   flex items-center `}
                   >
                     {slicer(item).map((char, index) => {
                       return (
                         <div
                           key={index}
-                          className={`text-[5vw]  font-['Seasons']  flex items-center justify-start overflow-hidden `}
+                          className={`  font-['Seasons']  flex items-center justify-start overflow-hidden `}
                         >
                           <motion.span
                             initial={{ x: -100, opacity: 0, fontSize: "5vw" }}
                             animate={{
                               x: 0,
                               opacity: index === 0 ? 1 : 0.7,
-                              fontSize: index === 0 ? "5vw" : "4vw",
+                              fontSize: isMobile ? (index === 0 ? "10vw" : "9vw") : (index === 0  ? "5vw" : "4vw"),
                             }}
                             whileHover={
                               index === 0
@@ -103,7 +121,7 @@ const Menubar = ({ menuOpen, setMenuOpen }) => {
                   </motion.h1>
 
                   <motion.div
-                    className="rounded-lg  text-[2vw]"
+                    className={`rounded-lg ${isMobile ? " text-[6vw]" : "text-[2vw]"} `}
                     whileTap={{
                       scale: 1.2,
                       rotate: 360,
