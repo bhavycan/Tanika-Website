@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import React from 'react'
+import ServiceWorkBanner from '../../templates/ServiceWorkBanner';
 
 const HomeService = () => {
     
@@ -11,21 +12,24 @@ const HomeService = () => {
         return arr;
       };
       return (
-        <div className="w-full min-h-[100vh] overflow-hidden text-white ">
-          <img className='absolute -z-10 w-full h-[100vh] object-cover object-[30%_75%]' src="/images/services.png" alt="" />
-          <div className="title w-full  flex flex-col  justify-center  ml-[6%]  mt-20">
-            <h1 className='text-[18vw] w-fit font-["Seasons"]'> {slicer("Service").map((char, index) => {
+        <div className="w-full min-h-[100vh] relative overflow-hidden flex items-center justify-center   text-black ">
+          <div className="w-full h-full z-10 absolute">
+             <ServiceWorkBanner />
+          </div>
+        
+          <div className="title w-[50%] h-[45vh] absolute z-20 flex flex-col  justify-center  items-center  ">
+            <h1 className=' w-fit font-["Seasons"]  text-[#b71437]'> {slicer("Service").map((char, index) => {
                                   return (
                                     
                                       <motion.span
-                                        initial={{ x: -100,  fontSize: "25vw",
-                                            
+                                        initial={{ x: -100,  fontSize: "12vw",
+                                            opacity : 0
                                          }}
                                         animate={{
                                           x: 0,
                                           y: index === 0 ? -20 : 0,
-                                         color: index === 0 ? "#A1045A" : "white",
-                                          fontSize: index === 0 ? "19vw" : "18vw",
+                                         color: index === 0 ? "#A1045A" : "#b71437",
+                      opacity: 1,
                                           rotate : index === 0 ? 180 : 0,
                                         }}
                                         whileHover={
@@ -53,10 +57,15 @@ const HomeService = () => {
                                   
                                   );
                                 })}</h1>
+
+                                <motion.div 
+                                initial={{opacity : 0}}
+                                animate={{opacity: 1}}
+                                transition={{duration: 1, delay: 1}}
+            className="para w-[80%] text-center   text-[1vw] -mt-[6.5%]  leading-5 font-serif ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum eos quasi recusandae non natus et corrupti quis nemo ab inventore eius, a optio soluta minima sint libero dignissimos. Sunt voluptatibus repudiandae rerum earum deleniti nemo, ullam nam est at numquam?</motion.div>
            
           </div>
-          <motion.div 
-            className="para w-[50%] text-[1.2vw] -mt-[3.5%]  ml-[6%] leading-5 font-serif ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum eos quasi recusandae non natus et corrupti quis nemo ab inventore eius, a optio soluta minima sint libero dignissimos. Sunt voluptatibus repudiandae rerum earum deleniti nemo, ullam nam est at numquam?</motion.div>
+          
          
         </div>
       )

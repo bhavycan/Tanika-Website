@@ -12,6 +12,8 @@ const ServiceWorkBanner = () => {
         }
         return arr;
       };
+
+      
   return (
     <div className='w-full h-[100vh] bg-black overflow-hidden '>
         <motion.div 
@@ -39,7 +41,7 @@ const ServiceWorkBanner = () => {
             </div>
         )
     })}
-x
+
 
  
     </div>

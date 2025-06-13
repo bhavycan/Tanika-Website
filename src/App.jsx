@@ -3,9 +3,11 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import SitePage from './SitePage'
 import Services from './components/services/Services'
 import Portfolio from './components/portfolio/Portfolio';
-
+import LocomotiveScroll from 'locomotive-scroll';
 const App = () => {
   const location = useLocation();
+  
+const locomotiveScroll = new LocomotiveScroll();
  
   useEffect(() => {
     let previousWidth = window.innerWidth;

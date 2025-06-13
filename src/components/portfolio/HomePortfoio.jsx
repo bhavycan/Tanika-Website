@@ -12,7 +12,7 @@ const HomePortfoio = () => {
     return arr;
   };
   return (
-    <div className="w-full h-[100vh]  relative flex items-center  overflow-hidden  ">
+    <div className="w-full h-[100vh]  relative flex items-center justify-center overflow-hidden  ">
       <div className="left w-[50%] h-full  pt-1">
         <motion.div className="w-[100%]   h-[50%] overflow-hidden text-black mt-[15%]  ">
           {title.map((item, index) => {
@@ -23,9 +23,9 @@ const HomePortfoio = () => {
                 </h1>
                 <motion.h1 
                 initial={{x: 10, y: -10, opacity: 0}}
-                whileInView={{x : -5, y : 5, opacity: .2}}
+                whileInView={{x : -5, y : 5, opacity: .1}}
                 transition={{duration: 1}}
-                className="w-full absolute top-4 left-1 opacity-10  text-[10vw] uppercase  h-[9vw] flex items-center justify-end ">
+                className="w-full absolute top-1 left-1   text-[10vw] uppercase  h-[9vw] flex items-center justify-end ">
                   {item}
                 </motion.h1>
               </div>
@@ -49,9 +49,9 @@ const HomePortfoio = () => {
           </h2>
         </div>
       </div>
-      <div className="right w-[50%] h-full pt-1 mt-[15%] ml-10 flex item-center justify-start">
+      <div className="right w-[40%] h-full pt-1 mt-[15%] ml-10 flex item-center justify-start">
        
-        <div className="image w-[55%] h-[70%]  relative shadow-2xl">
+        <div className="image w-[65%] h-[70%]  relative shadow-2xl">
         <motion.div 
         initial={{rotate: 180}}
         whileInView={{rotate : 0}}

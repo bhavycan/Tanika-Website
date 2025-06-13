@@ -49,12 +49,12 @@ const StepPart = () => {
             onHoverStart={() => sethover(index)}
            
             onHoverEnd={() => sethover(null)}
-            className="steps-part w-full h-[12vw] mt-5    flex items-center relative px-12 py-2"
+            className="steps-part w-full h-[8vw] mt-5    flex items-center relative px-12 py-2"
           >
             <div className="name  w-[50%] h-full ">
               <motion.h1 
               whileHover={{scale : 1.1, transformOrigin : "left", opacity : 1}}
-              className="w-full h-full opacity-80  text-[3vw] flex items-center">
+              className="w-full h-full opacity-80   text-[1.8vw] flex items-center">
                 {item.name}
               </motion.h1>
               <motion.div
@@ -62,14 +62,15 @@ const StepPart = () => {
                whileInView={{scaleX : .82, opacity: 1 }}
                transition={{duration: .8, ease: "easeInOut"}}
               
-              className="line w-full h-[2px] bg-black opacity-80"></motion.div>
+              className="line w-full h-[1px] bg-black opacity-80"></motion.div>
             </div>
             <div className="location-year w-[50%] h-full  items-end flex flex-col justify-center">
-              <h2 className="text-[2vw]">{item.location}</h2>
+              <h2 className="text-[1vw]">{item.location}</h2>
               <h3 className="text-[1vw]">{item.year}</h3>
             </div>
       
-            <motion.div
+
+      {ishover === index ? (<motion.div
               initial={{ opacity: 0, pointerEvents: "none" }}
               animate={{
                 opacity: ishover === index ? 1 : 0,
@@ -81,7 +82,8 @@ const StepPart = () => {
             >
 
 <img src={item.image} alt="" className='w-full h-full object-cover' />
-            </motion.div>
+            </motion.div>) : ""}
+            
            
           </motion.div>
         ))
