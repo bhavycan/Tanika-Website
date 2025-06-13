@@ -19,6 +19,14 @@ const Home = () => {
     "quality, custom-made furniture to transform houses into",
     "personalized homes.",
   ];
+
+  const mobilepara =   [
+    "Home design and furniture company specializes in",
+    "crafting modern, functional, and stylish interiors",
+    "tailored to your lifestyle. We combine innovative ",
+    "design with high quality, custom-made furniture",
+    "to transform houses into personalized homes.",
+  ];
  
   useEffect(() => {
     const checkMobile = () => {
@@ -138,8 +146,8 @@ const Home = () => {
             className={`${
               isMobile ? "text-[12vw] mb-2" : "text-[9vw] mb-6"
             } tracking-tight relative font-['Italiana',sans-serif] text-[#2e2319] ${
-              isMobile ? "h-16" : "h-32"
-            } overflow-hidden`}
+              isMobile ? "h-[5vh]" : "h-32"
+            } overflow-hidden `}
           >
             {heading.map((item, index) => {
               return (
@@ -148,7 +156,7 @@ const Home = () => {
                   initial={{ y: 130, opacity: 0.5 }}
                   animate={{ y: isMobile ? -180 : -300, opacity: 1 }}
                   transition={{ duration: 5, ease: [0.34, 1.56, 0.7, 0.85] }}
-                  className={`${isMobile ? "mt-5" : "-mt-10"}`}
+                  className={`${isMobile ? "mt-1" : "-mt-10"}`}
                 >
                   {item}
                 </motion.h1>
@@ -159,17 +167,17 @@ const Home = () => {
 
         <div
           className={`center-para w-full leading-tight ${
-            isMobile ? "h-auto mt-6 text-sm" : "h-28 leading-5"
+            isMobile ? "h-auto mt-6 text-sm text-center" : "h-28 leading-5"
           }`}
         >
-          {para.map((item, index) => {
+          { (isMobile ? mobilepara : para).map((item, index) => {
             return (
-              <h1 key={index} className={`font-serif overflow-hidden  ${isMobile ? "text-[3.5vw]  w-full" : ""} `}>
+              <h1 key={index} className={`font-serif overflow-hidden text-center  ${isMobile ? "text-[3.7vw]  w-full" : ""} `}>
                 <motion.span
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: index * 0.2 }}
-                  className="inline-block w-[65%]"
+                  className={`inline-block  ${isMobile ? "w-[100%]" : "w-[65%]"}`}
                 >
                   {item}
                 </motion.span>

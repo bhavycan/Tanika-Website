@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import ServiceWorkBanner from '../../templates/ServiceWorkBanner'
 import gsap, { ScrollTrigger } from 'gsap/all'
 import Steps from './Steps'
@@ -9,13 +9,16 @@ const Process = () => {
   gsap.registerPlugin(ScrollTrigger)
   
   const parent = useRef(null)
+
+  const [isMobile, setIsMobile] = useState(false);
+ 
   
   useEffect(() => {
    const tl =  gsap.timeline({
       scrollTrigger: {
         trigger: parent.current,
         start: 'top 0%',
-        end: 'bottom -300%',
+        end: isMobile ? "bottom 90%" : 'bottom -300%',
         scrub: true,
         pin: true,
         markers: true,
@@ -28,7 +31,16 @@ const Process = () => {
         
  
       })
-      
+      const checkMobile = () => {
+        setIsMobile(window.innerWidth <= 480);
+      };
+  
+      checkMobile();
+      window.addEventListener("resize", checkMobile);
+  
+       return () => {
+        window.removeEventListener("resize", checkMobile);
+      };
 
   }, [])
   return (
@@ -37,7 +49,7 @@ const Process = () => {
         <div className="w-full h-full flex items-center justify-center">
             <h1 className='text-[6vw] z-40 bg-[#F7C9D3]  p-3 font-["Seasons"] font-semibold text-black'>Your dream home in 5 steps</h1>
 </div>
-<div className="step-card-container h-full w-[400%]  absolute top-0 -left-[400%]">
+<div className={`step-card-container h-[100vh] w-[400%]  absolute top-0 -left-[400%]`}>
 
               <Steps />
 </div>

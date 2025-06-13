@@ -1,7 +1,7 @@
 
 import { motion } from 'framer-motion'
 import { div } from 'motion/react-client';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const ServiceWorkBanner = () => {
     const background = ["ABCDEFGHIJKLMNO", "QRSTUVWXYZABCDEF", "ABCDEFGHIJKLMNO", "QRSTUVWXYZABCDEF", "ABCDEFGHIJKLMNO", "QRSTUVWXYZABCDEF"];
@@ -12,6 +12,20 @@ const ServiceWorkBanner = () => {
         }
         return arr;
       };
+
+const [isMobile, setIsMobile] = useState(false);
+useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 480);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+     return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  },[])
 
       
   return (
@@ -24,7 +38,7 @@ const ServiceWorkBanner = () => {
 <div className='w-full h-full flex flex-col'>
     {background.map((item,i)=>{
         return(
-            <div className="w-full flex">
+            <div className={`w-full h-full flex bg-red-200`}>
             {slicer(item).map((char, index) => {
                 return (
                     <motion.span 
@@ -33,7 +47,7 @@ const ServiceWorkBanner = () => {
                     whileHover={{opacity : 1}}
                     whileTap={{opacity : 1}}
                     transition={{duration: 0.5}}
-                    key={index} className='w-[9vw] h-[9vw] flex items-center justify-center text-center text-[10vw] border-2 border-white'>
+                    key={index} className={` ${isMobile ? "w-[35vw] h-[35vw]" : "w-[9vw] h-[9vw]"}  flex items-center justify-center text-center ${isMobile ? "text-[35vw]" : "text-[10vw]"} text-[10vw] border-2 border-white`}>
                         {char}
                     </motion.span>
                 );
