@@ -38,7 +38,7 @@ useEffect(() => {
 <div className='w-full h-full flex flex-col'>
     {background.map((item,i)=>{
         return(
-            <div className={`w-full h-full flex bg-red-200`}>
+            <div className={`w-full h-full flex `}>
             {slicer(item).map((char, index) => {
                 return (
                     <motion.span 

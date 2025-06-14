@@ -55,7 +55,7 @@ useEffect(() => {
                                             ? {}
                                             : {
                                                 scale: 1.2,
-                                                color: "white",
+                                                color: "#FECACA",
                                                 opacity: 1,
                                                 transition: {
                                                   duration: 0.2,
