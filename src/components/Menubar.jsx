@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Menubar = ({ menuOpen, setMenuOpen }) => {
   const pageName = ["Portfolio", "Services", "Partners", "Quote"];
@@ -72,8 +73,10 @@ const Menubar = ({ menuOpen, setMenuOpen }) => {
           {pageName.map((item, i) => {
             return (
               <div className="cont w-[100%] h-[25%] flex flex-col    ">
-                <div
+                
+                <Link
                   key={i}
+                  to={`/${item.toLowerCase()}`}
                   className={`names h-[70%] w-[90%] ml-5  flex  items-center justify-start `}
                 >
                   <motion.h1
@@ -120,6 +123,7 @@ const Menubar = ({ menuOpen, setMenuOpen }) => {
                     })}
                   </motion.h1>
 
+                 
                   <motion.div
                     className={`rounded-lg ${isMobile ? " text-[6vw]" : "text-[2vw]"} `}
                     whileTap={{
@@ -131,7 +135,8 @@ const Menubar = ({ menuOpen, setMenuOpen }) => {
                   >
                     <i class="ri-arrow-right-up-line"></i>
                   </motion.div>
-                </div>
+                </Link>
+                
 
                 <motion.div
                   initial={{ width: "0%", opacity: 0 }}
