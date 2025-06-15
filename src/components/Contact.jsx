@@ -57,7 +57,16 @@ const Contact = () => {
     <div ref={parent}  className={`  ${isMobile ? " w-[200%] h-[100vh]" : "w-[200%] h-[100vh]"} overflow-hidden  text-black mt-20  flex  `}>
   
       <div  className={`imagecontainer  px-5 pt-5 pb-8  ${isMobile ? " w-[100%] h-full " : "w-[200%]   h-full"}  `}>
-        <img className='w-full h-[100%]  object-cover' src={isMobile ? "https://images.unsplash.com/photo-1487147264018-f937fba0c817?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" : "/images/contact.png"} alt="" />
+        <img className='w-full h-[100%] -z-10  object-cover' src={isMobile ? "https://images.unsplash.com/photo-1487147264018-f937fba0c817?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" : "/images/contact.png"} alt="" />
+       {isMobile ? ( <div className='w-[50%] h-full top-0  px-5 pt-5 pb-8  absolute z-10'>
+          <p className='w-[80%] text-[8vw] font-["Seasons"] leading-9 mt-10  '>Daily Updates and weekly Reports with our own AI powered App</p>
+          
+          <div className='w-[80%] h-[65vh] mt-3 relative'>
+          
+            <motion.img className='w-full h-full object-cover absolute ' src="./images/mobile.png" alt="" />
+          </div>
+        </div>) : (<></>)}
+       
       </div>
       <div className={`content  h-full text-black mt-5 ${isMobile ? "w-[100%] ml-5": "w-[100%]"}`}>
     <div className={isMobile ? "title w-full leading-10" : "title w-full leading-[6vw]"}>

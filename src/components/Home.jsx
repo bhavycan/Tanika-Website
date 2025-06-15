@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Menubar from "./Menubar";
+import { div, h1 } from "motion/react-client";
 
 const Home = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -11,7 +12,9 @@ const Home = () => {
     setMenuOpen((prev) => !prev);
   };
 
-  const heading = ["Future", "Family", "Home"];
+  const heading = ["armony",  "earth","ome"];
+  
+  const pcheading = ["Heaven",  "Hearth","Home"];
   const para = [
     "Home design and furniture company specializes in",
     "crafting modern, functional, and stylish interiors tailored",
@@ -22,10 +25,10 @@ const Home = () => {
 
   const mobilepara =   [
     "Home design and furniture company specializes in",
-    "crafting modern, functional, and stylish interiors",
-    "tailored to your lifestyle. We combine innovative ",
-    "design with high quality, custom-made furniture",
-    "to transform houses into personalized homes.",
+    "crafting modern, functional, and stylish interiors tailored",
+    "to your lifestyle. We combine innovative design with ",
+    "high quality, custom-made furniture to transform",
+    "houses into personalized homes.",
   ];
  
   useEffect(() => {
@@ -125,10 +128,10 @@ const Home = () => {
             
       </motion.div>
 
-      <div className="center-text w-full mt-20 md:mt-12 relative z-10 text-center px-4">
+      <div className="center-text w-full mt-14 md:mt-12 relative z-10 text-center px-4">
         <div
-          className={`title flex gap-2 md:gap-6 w-full justify-center items-center ${
-            isMobile ? "h-16" : "h-32"
+          className={`title  flex gap-2 md:gap-6 w-full  ${
+            isMobile ? "h-16 flex-col items-start" : "h-32 justify-center items-center"
           }`}
         >
           <motion.h1
@@ -136,7 +139,7 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             className={`${
-              isMobile ? "text-[12vw]" : "text-[7vw]"
+              isMobile ? "text-[5vw] tracking-tighter ml-5 " : "text-[7vw]"
             } font-['Brittany']`}
           >
             We make
@@ -144,35 +147,55 @@ const Home = () => {
 
           <motion.div
             className={`${
-              isMobile ? "text-[12vw] mb-2" : "text-[9vw] mb-6"
-            } tracking-tight relative font-['Italiana',sans-serif] text-[#2e2319] ${
-              isMobile ? "h-[5vh]" : "h-32"
-            } overflow-hidden `}
+              isMobile ? "w-[100%] h-[20vh] flex mt-4 items-center text-white justify-center    " : "text-[9vw] h-32 mb-6 overflow-hidden"
+            } tracking-tight relative font-["Seasons"]  text-[#2e2319]   `}
           >
-            {heading.map((item, index) => {
+           
+          {isMobile ?  (
+            <div className="w-full h-full flex items-center justify-center">
+               <motion.span
+            initial={{opacity : 0, y: 50}}
+              animate={{opacity : 1, y: 0}}
+              transition={{duration: 2, ease: [0.22, 1, 0.36, 1]}}
+            className="text-[55vw] w-[40%] h-[22vh] flex items-center text-[#2E2319] justify-center">H</motion.span>
+            <div className=" uppercase  mb-2 w-[50%]  flex flex-col items-start justify-start ">
+         {   heading.map((item,index)=>{
+            return (
+              <motion.h1
+              initial={{opacity : 0 ,y: -50}}
+              animate={{opacity : 1, y: 0}}
+              transition={{duration: 3, delay : index*1, ease:[0.22, 1, 0.36, 1]}}
+              className={`   flex items-center justify-center ${index === 1 ? "text-[10vw] h-[6vh]" : index == 2 ? "text-[20vw] h-[8vh]" : "text-[6vw] h-[4vh]"}  `}>{item}</motion.h1>
+            )
+          })}
+          
+          </div>
+          </div>
+            
+          ) : (pcheading.map((item, index) => {
               return (
                 <motion.h1
                   key={index}
                   initial={{ y: 130, opacity: 0.5 }}
-                  animate={{ y: isMobile ? -180 : -300, opacity: 1 }}
+                  animate={{ y:  -300, opacity: 1 }}
                   transition={{ duration: 5, ease: [0.34, 1.56, 0.7, 0.85] }}
-                  className={`${isMobile ? "mt-1" : "-mt-10"}`}
+                  className={` -mt-10`}
                 >
                   {item}
                 </motion.h1>
               );
-            })}
+            }) )}
           </motion.div>
         </div>
 
         <div
           className={`center-para w-full leading-tight ${
-            isMobile ? "h-auto mt-6 text-sm text-center" : "h-28 leading-5"
+            isMobile ? "h-auto mt-[45%] text-sm text-center" : "h-28 leading-5"
           }`}
         >
           { (isMobile ? mobilepara : para).map((item, index) => {
             return (
-              <h1 key={index} className={`font-serif overflow-hidden text-center  ${isMobile ? "text-[3.7vw]  w-full" : ""} `}>
+              <h1 key={index} className={`font-serif overflow-hidden   ${isMobile ? "text-[3vw]  w-full text-center" : ""} `}>
                 <motion.span
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -203,7 +226,7 @@ const Home = () => {
       </div>
       <AnimatePresence >
       {menuOpen && (
-              <div className={`menu-container ${isMobile ? "w-[89%] h-[85vh] " : "w-[30%] h-[95vh] " }    absolute z-50 top-0 left-0`}>
+              <div className={`menu-container ${isMobile ? "w-[89%] h-[85vh] " : "w-[30%] h-[95vh] " }    absolute z-50 top-0 left-0 `}>
                 <Menubar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
               </div>
             )}
