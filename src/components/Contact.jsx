@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 
 const Contact = () => {
   const mobileName = ["Contact", "Us"]
+  const aitag = ["Trust with", "Transparency"]
   const name = ["Contact Us"]
   const [isMobile, setIsMobile] = useState(false);
   const parent = useRef(null)
@@ -57,14 +58,51 @@ const Contact = () => {
     <div ref={parent}  className={`  ${isMobile ? " w-[200%] h-[100vh]" : "w-[200%] h-[100vh]"} overflow-hidden  text-black mt-20  flex  `}>
   
       <div  className={`imagecontainer  px-5 pt-5 pb-8  ${isMobile ? " w-[100%] h-full " : "w-[200%]   h-full"}  `}>
-        <img className='w-full h-[100%] -z-10  object-cover' src={isMobile ? "https://images.unsplash.com/photo-1487147264018-f937fba0c817?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" : "/images/contact.png"} alt="" />
-       {isMobile ? ( <div className='w-[50%] h-full top-0  px-5 pt-5 pb-8  absolute z-10'>
-          <p className='w-[80%] text-[8vw] font-["Seasons"] leading-9 mt-10  '>Daily Updates and weekly Reports with our own AI powered App</p>
+       {!isMobile && (<img className='w-full h-[100%] -z-10  object-cover' src="/images/contact.png" alt="" />)} 
+       {isMobile ? ( <div className='w-[50%] h-full top-5   pt-5 pb-8  absolute z-10'>
+      
           
-          <div className='w-[80%] h-[65vh] mt-3 relative'>
+          <div className='w-[90%]  h-[65vh]  flex items-center justify-center relative'>
           
-            <motion.img className='w-full h-full object-cover absolute ' src="./images/mobile.png" alt="" />
+            <motion.img
+            initial={{rotate : -20 ,origin: "bottom-right"}}
+             whileInView={{rotate : 4, origin: "bottom-right", opacity: 80}}
+             transition={{duration: 2,delay: .2}}
+            className='w-[80%] h-full object-cover absolute ' src="./images/mobile.png" alt="" />
+             <motion.img 
+             initial={{rotate : -20 ,origin: "bottom-left"}}
+             whileInView={{rotate : 6, origin: "bottom-left", opacity: 80}}
+             transition={{duration: 2,delay: .5}}
+             className='w-[80%] h-full object-cover absolute ' src="./images/mobile.png" alt="" />
+             <motion.img className='w-[80%] h-full object-cover absolute   ' src="./images/mobile.png" alt="" />
+             
           </div>
+          <div className="title w-full mt-5">
+              { aitag.map((item, index) => {
+                return (
+                  <h1 
+                    key={index}
+                    className={`uppercase border-l-4 pl-3 border-black overflow-hidden 
+                   flex items-center justify-start
+                      text-[10vw] h-[11vw]
+                        
+                    `}
+                  >
+                    <motion.span
+                      initial={{ y: 0, rotate: 45, transformOrigin: "left", opacity: 0 }}
+                      whileInView={{ y: 0, rotate: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: index * 0.2 }}
+                      className='inline-block font-["Seasons"] '
+                    >
+                      {item}
+                    </motion.span>
+                  </h1>
+                )
+              })}
+          </div>
+        
+
+          <div className="tag w-[90%] leading-5 mt-2 text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab culpa perferendis consequuntur accusantium, nostrum natus.</div>
         </div>) : (<></>)}
        
       </div>
