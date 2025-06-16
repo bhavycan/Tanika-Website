@@ -115,8 +115,8 @@ const Offer = ({imagelink}) => {
       </motion.div>
 
         {isMobile && ( 
-          <div className='w-full flex justify-end pr-3 h-[80%] mt-[15%]'>
-              <p className='w-[75%] h-fit text-right  bg-red-200 font-serif leading-5 opacity-80'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, autem tenetur atque quos harum, repellendus porro impedit accusantium.</p>
+          <div className='w-full flex justify-end items-end pr-3 h-[30%] mt-[15%]'>
+              <p className='w-[75%] h-fit text-right  font-serif leading-5 opacity-80'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, autem tenetur atque quos harum, repellendus porro impedit accusantium.</p>
           </div>
         )}
       
