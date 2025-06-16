@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: 'Brittany';
-  src: local('Brittany Signature'), url(fonts/BrittanySignature.woff) format('woff');
+  src: local('Brittany Signature'), url('/fonts/BrittanySignature.woff') format('woff');
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }
@@ -14,7 +14,7 @@
 
 @font-face {
   font-family: 'Seasons';
-  src: local('Seasons'), url(fonts/Fontspring-DEMO-theseasons-reg.woff) format('woff');
+  src: local('Seasons'), url('/fonts/Fontspring-DEMO-theseasons-reg.woff') format('woff');
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }
