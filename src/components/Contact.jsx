@@ -64,17 +64,13 @@ const Contact = () => {
           
           <div className='w-[90%]  h-[65vh]  flex items-center justify-center relative'>
           
-            <motion.img
-            initial={{rotate : -20 ,origin: "bottom-right"}}
-             whileInView={{rotate : 4, origin: "bottom-right", opacity: 80}}
-             transition={{duration: 2,delay: .2}}
-            className='w-[80%] h-full object-cover absolute ' src="./images/mobile.png" alt="" />
-             <motion.img 
-             initial={{rotate : -20 ,origin: "bottom-left"}}
-             whileInView={{rotate : 6, origin: "bottom-left", opacity: 80}}
-             transition={{duration: 2,delay: .5}}
-             className='w-[80%] h-full object-cover absolute ' src="./images/mobile.png" alt="" />
-             <motion.img className='w-[80%] h-full object-cover absolute   ' src="./images/mobile.png" alt="" />
+            
+             <motion.img
+             initial={{scale: 2}}
+             whileInView={{scale :1}}
+             transition={{duration : 1}}
+             
+             className='w-[80%] h-full object-cover absolute   ' src="./images/mobile.png" alt="" />
              
           </div>
           <div className="title w-full mt-5">
