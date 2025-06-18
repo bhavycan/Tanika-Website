@@ -86,7 +86,7 @@ const Offer = ({imagelink}) => {
               initial={{ y: 50, rotate: 45, transformOrigin: "right", opacity: 0 }}
               whileInView={{ y: 0, rotate: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="inline-block mt-4"
+              className="inline-block mt-2 "
             >
               {item}
             </motion.span>

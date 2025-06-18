@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Menubar from "./Menubar";
-import { div, h1 } from "motion/react-client";
+import TypingHeading from "../templates/TypingHeading";
+
 
 const Home = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -172,19 +173,7 @@ const Home = () => {
           </div>
           </div>
             
-          ) : (pcheading.map((item, index) => {
-              return (
-                <motion.h1
-                  key={index}
-                  initial={{ y: 130, opacity: 0.5 }}
-                  animate={{ y:  -300, opacity: 1 }}
-                  transition={{ duration: 5, ease: [0.34, 1.56, 0.7, 0.85] }}
-                  className={` -mt-10`}
-                >
-                  {item}
-                </motion.h1>
-              );
-            }) )}
+          ) : (<TypingHeading pcheading={pcheading} />)}
           </motion.div>
         </div>
 

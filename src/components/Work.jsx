@@ -120,13 +120,13 @@ isMobile && (tl.to('.workvideo',{
     
       <div className={`work-part top-[0%] ${isMobile ? "flex-col" : " "}   opacity-0 absolute flex items-center justify-center gap-2 w-full h-[90vh]`}>
 
-    <div className={`countdown ${isMobile ? " w-[100%] h-[30%]" : "w-[50%]  h-full "}  flex items-center flex-col  justify-center `}>
+    <div className={`countdown ${isMobile ? " w-[100%] h-[40%]" : "w-[50%]  h-full justify-center "}  flex items-center flex-col    `}>
       <Countdown />
       <motion.div 
        initial={{ y: 20 }}
        whileInView={{ y: 0 }}
        transition={{ duration: 1, delay:  1 }}
-      className={`text-below w-[80%] ${isMobile ? "text-center text-sm leading-4 mt-5" : " text-center text-xl leading-6"}    opacity-60   font-serif text-black`}><p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur voluptatem deleniti, sunt nostrum laboriosam nulla reprehenderit ut provident magnam similique aperiam expedita veniam aliquid illo ratione atque saepe! Nemo dolor dicta cum optio corrupti minus?</p></motion.div>
+      className={`text-below w-[80%] ${isMobile ? "text-center  text-sm leading-4 mt-[6%]" : " text-center text-xl leading-6"}    opacity-60   font-serif text-black`}><p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur voluptatem deleniti, sunt nostrum laboriosam nulla reprehenderit ut provident magnam similique aperiam expedita veniam aliquid illo ratione atque saepe! Nemo dolor dicta cum optio corrupti minus?</p></motion.div>
     </div>
 
     <div className={`${isMobile ? "flex-col h-[70%]  w-[100%]" : "w-[50%]  h-full"} site-name  flex  items-center   gap-3 `}>
@@ -147,11 +147,11 @@ isMobile && (tl.to('.workvideo',{
             })}
            
           </div>
-          <div className={` ${isMobile ? "w-[100%] " : "w-[50%]"} flex items-center justify-center text-black leading-10 flex-col`}>
+          <div className={` ${isMobile ? "w-[100%] " : "w-[50%]"} flex items-center justify-center text-black leading-8 flex-col`}>
             <h1 className={`${isMobile ? "text-[4vw]" : "text-[2vw]"}  font-serif opacity-80`}>Check Out Our </h1>
             <Link to={'/portfolio'}>
                  <div className="w-full flex items-center justify-center">
-            <h1 className={` ${isMobile ? "text-[9vw]" : "text-[4vw] mt-2"}  font-["Seasons"] `}>Portfolio
+            <h1 className={` ${isMobile ? "text-[9vw]" : "text-[4vw] mt-3"}  font-["Seasons"] `}>Portfolio
              
             </h1>
              <motion.div

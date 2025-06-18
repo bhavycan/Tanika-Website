@@ -57,7 +57,7 @@ const Countdown = () => {
              initial = {{opacity : 0, scale : 2}}
              whileInView={{opacity : 1, scale : 1}}
                 transition={{duration : 1, delay : 2}}
-             className='inlibe-block text-[10vw] font-bold absolute topo-10 '>+</motion.span></motion.h1>
+             className='inline-block text-[10vw] font-bold absolute '>+</motion.span></motion.h1>
     </div>
   )
 }
