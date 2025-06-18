@@ -89,7 +89,6 @@ const Review = () => {
       clearInterval(intervalRef.current);
     };
 
-    return () => clearInterval(interval);
   }, [reviews.length, isMobile]);
 
   return (

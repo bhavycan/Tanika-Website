@@ -4,6 +4,7 @@ import SitePage from './SitePage'
 import Services from './components/services/Services'
 import Portfolio from './components/portfolio/Portfolio';
 import LocomotiveScroll from 'locomotive-scroll';
+import ScrollToTop from './components/ScrollToTop';
 const App = () => {
   const location = useLocation();
   
@@ -24,6 +25,7 @@ const locomotiveScroll = new LocomotiveScroll();
   }, []);
   return (
     <div className="relative overflow-hidden"> {/* ✅ Ensures Menu can overlay */}
+    <ScrollToTop />
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<SitePage />} />
         <Route path="/services" element={<Services />} />
