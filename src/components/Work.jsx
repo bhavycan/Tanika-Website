@@ -65,8 +65,10 @@ isMobile && (tl.to('.workvideo',{
     
   
     tl.to('.work', {
-     
-      scale: 10,
+     rotateZ : 90,
+        rotateY : 90,
+            rotateX : 90,
+      scale: 5,
       duration: 1,
       opacity: 0,
       ease: 'power.inOut',

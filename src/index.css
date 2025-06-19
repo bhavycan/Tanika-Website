@@ -9,6 +9,7 @@
   src: local('Brittany Signature'), url('/fonts/BrittanySignature.woff') format('woff');
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
+                              font-display: swap;
 }
 
 
@@ -17,6 +18,8 @@
   src: local('Seasons'), url('/fonts/Fontspring-DEMO-theseasons-reg.woff') format('woff');
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
+                             font-display: swap;
+
 }
 
 
