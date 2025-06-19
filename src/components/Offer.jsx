@@ -69,7 +69,7 @@ const Offer = ({imagelink}) => {
     className={`w-full  text-black relative ${isMobile ? "mt-[25%] px-3 h-[90vh] mb-20 pt-3" : "mt-20 py-3 px-6 h-[100vh]  "}   overflow-hidden`}> 
       <div className={`background   ${isMobile ? "h-[95vh] pr-3 " : "h-[100vh]"}  w-[97%] absolute -top-10 -z-20 overflow-hidden`}>
         <img
-        
+        loading="lazy"
           className='w-full h-full object-cover'
           src={imagelink}
           alt="Background"

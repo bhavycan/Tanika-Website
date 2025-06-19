@@ -1,12 +1,11 @@
 
-import React, { useEffect } from 'react'
-import Home from './components/Home'
-import About from './components/About'
-
-import Work from './components/Work';
-import Offer from './components/Offer';
-import Review from './components/Review';
-import Contact from './components/Contact';
+import React, { lazy, Suspense, useEffect } from 'react'
+const Home = lazy(()=> import('./components/Home'))
+const Review = lazy(() => import('./components/Review'))
+const Work = lazy(()=> import('./components/Work'))
+const Offer = lazy(()=> import('./components/Offer'))
+const Contact = lazy(()=> import('./components/Contact'))
+const About = lazy(()=> import('./components/About'))
 import { Routes, Route, Router } from 'react-router-dom';
 
 
@@ -20,21 +19,18 @@ const SitePage = () => {
   
     
   return (
-<div className='w-full overflow-hidden   text-white'>
-      
-       
-      <Home  />
-      <About />
-   
-      <Offer imagelink={imagelink} />
-      <Work />
-      <Review />
-     
-      <Contact />
-     
-     
-     
+ <div className="w-full overflow-hidden text-white">
+      <Suspense fallback={<div className="py-20 text-center text-black text-xl">Loading site...</div>}>
+        <Home />
+        <About />
+        <Offer imagelink={imagelink} />
+        <Work />
+        <Review />
+        <Contact />
+      </Suspense>
     </div>
+      
+      
   )
 }
 

@@ -1,16 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React, { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import SitePage from './SitePage'
-import Services from './components/services/Services'
-import Portfolio from './components/portfolio/Portfolio';
+const Portfolio = lazy(()=> import('./components/portfolio/Portfolio'))
+const Services = lazy(()=> import('./components/services/Services'))
 import LocomotiveScroll from 'locomotive-scroll';
 import ScrollToTop from './components/ScrollToTop';
+
 const App = () => {
   const location = useLocation();
-  
+  const scrollRef = useRef(null);
 const locomotiveScroll = new LocomotiveScroll();
- 
+
   useEffect(() => {
+
+ const scroll = new LocomotiveScroll({
+    el: scrollRef.current,
+    smooth: true,
+  });
+
+
     let previousWidth = window.innerWidth;
   
     const handleResize = () => {
@@ -21,19 +29,28 @@ const locomotiveScroll = new LocomotiveScroll();
     };
   
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {window.removeEventListener("resize", handleResize)
+     
+    };
   }, []);
   return (
-    <div className="relative overflow-hidden"> {/* ✅ Ensures Menu can overlay */}
+   
+ <div key="mainPage-loader" className="relative overflow-hidden"> {/* ✅ Ensures Menu can overlay */}
     <ScrollToTop />
+    <Suspense fallback={<div>Loading...</div>}>
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<SitePage />} />
         <Route path="/services" element={<Services />} />
        <Route path='/portfolio' element={<Portfolio />} />
       </Routes>
+      </Suspense>
 
      
     </div>
+    
+    
+
+   
   );
   
 }

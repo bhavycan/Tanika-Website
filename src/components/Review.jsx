@@ -142,10 +142,11 @@ const Review = () => {
                       whileTap={isMobile ? { zIndex: 100, rotate: 0 } : {}}
                       drag
                       dragConstraints={constraintsRef}
-                     
+                     key={index}
                       className={`card w-[70%] h-[90%] rounded-xl bg-zinc-100   shadow-2xl   px-3 py-6  absolute  `}
+                      style={{ zIndex: card.length + index }}
                     >
-                      <Card value={card[index]} />
+                      <Card value={item} />
                     </motion.div>
                   );
                 })}

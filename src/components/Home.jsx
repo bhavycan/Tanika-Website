@@ -1,14 +1,15 @@
 
 import { motion, AnimatePresence } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Menubar from "./Menubar";
 import TypingHeading from "../templates/TypingHeading";
-
+import LocomotiveScroll from 'locomotive-scroll';
 
 const Home = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const scrollRef = useRef(null)
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
@@ -32,7 +33,15 @@ const Home = () => {
     "houses into personalized homes.",
   ];
  
+
   useEffect(() => {
+
+const scroll = new LocomotiveScroll({
+    el: scrollRef.current,
+    smooth: true,
+  });
+
+
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 480);
     };
@@ -56,16 +65,22 @@ const Home = () => {
       window.removeEventListener("resize", checkMobile);
       document.removeEventListener("click", handleClickOutside);
       window.removeEventListener("scroll", handleScroll);
+ scroll.destroy();
+ 
     };
-  }, []);
+  },[]);
 
   return (
-    <motion.div 
 
 
+
+  <motion.div 
+
+key="mainPage-loader"
     className="w-full  min-h-[100vh] overflow-hidden">
       <div
         data-scroll
+      ref={scrollRef}
         data-scroll-speed={isMobile ? " " : "1"}
         className={`image w-full  absolute z-10 overflow-hidden -top-10 ${isMobile ? "h-[120vh] " : "h-[150vh]" }  `}
       >
@@ -73,6 +88,8 @@ const Home = () => {
           className={`${isMobile ? "object-cover object-[30%_75%]" : "object-cover "} w-full h-full relative `}
           src="/images/livingroom.png"
           alt=""
+          loading="lazy"
+          
         />
       </div>
 
@@ -223,6 +240,14 @@ const Home = () => {
 </AnimatePresence>
        
     </motion.div>
+
+
+
+  
+
+
+    
+  
     
   );
 };

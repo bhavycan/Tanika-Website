@@ -58,7 +58,7 @@ const Contact = () => {
     <div ref={parent}  className={`  ${isMobile ? " w-[200%] h-[100vh]" : "w-[200%] h-[100vh]"} overflow-hidden  text-black mt-20  flex  `}>
   
       <div  className={`imagecontainer  px-5 pt-5 pb-8  ${isMobile ? " w-[100%] h-full " : "w-[200%]   h-full"}  `}>
-       {!isMobile && (<img className='w-full h-[100%] -z-10  object-cover' src="/images/contact.png" alt="" />)} 
+       {!isMobile && (<img loading="lazy" className='w-full h-[100%] -z-10  object-cover' src="/images/contact.png" alt="" />)} 
        {isMobile ? ( <div className='w-[50%] h-full top-5   pt-5 pb-8  absolute z-10'>
       
           
@@ -66,6 +66,7 @@ const Contact = () => {
           
             
              <motion.img
+             loading="lazy"
              initial={{scale: 2}}
              whileInView={{scale :1}}
              transition={{duration : 1}}
