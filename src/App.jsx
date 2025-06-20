@@ -19,10 +19,7 @@ const locomotiveScroll = new LocomotiveScroll();
     smooth: true,
   });
 
-    setTimeout(() => {
-    document.body.classList.remove('loading');
-    ScrollTrigger.refresh();
-  }, 1000);
+   
 
     let previousWidth = window.innerWidth;
   

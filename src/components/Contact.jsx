@@ -33,7 +33,7 @@ const Contact = () => {
           end : "bottom -150%",
           scrub : true,
           pin : true,
-          markers : true
+          markers : false
         }
       })
 

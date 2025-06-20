@@ -76,6 +76,9 @@ isMobile && (tl.to('.workvideo',{
     });
   
     tl.to('.work-part', {
+       onStart: () => {
+    document.querySelector('.work-part')?.classList.remove('hidden');
+  },
       scale: 1,
       duration: 1,
       opacity: 1,
@@ -128,7 +131,7 @@ isMobile && (tl.to('.workvideo',{
       </div>
 
     
-      <div className={`work-part top-[0%] ${isMobile ? "flex-col" : " "}   opacity-0 absolute flex items-center justify-center gap-2 w-full h-[90dvh] min-height-[90vh]`}>
+      <div className={`work-part hidden top-[0%] ${isMobile ? "flex-col" : " "}   opacity-0 absolute flex items-center justify-center gap-2 w-full h-[90dvh] min-height-[90vh]`}>
 
     <div className={`countdown ${isMobile ? " w-[100%] h-[40%]" : "w-[50%]  h-full justify-center "}  flex items-center flex-col    `}>
       <Countdown />
