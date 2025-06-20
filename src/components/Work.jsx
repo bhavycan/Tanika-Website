@@ -133,24 +133,28 @@ isMobile && (tl.to('.workvideo',{
     
       <div className={`work-part hidden top-[0%] ${isMobile ? "flex-col" : " "}   opacity-0 absolute flex items-center justify-center gap-2 w-full h-[90dvh] min-height-[90vh]`}>
 
-    <div className={`countdown ${isMobile ? " w-[100%] h-[40%]" : "w-[50%]  h-full justify-center "}  flex items-center flex-col    `}>
-      <Countdown />
+    <div className={`countdown ${isMobile ? " w-[100%] h-[35%]" : "w-[50%]  h-full justify-center "}  flex items-center  flex-col     `}>
+    
+    <div className={` ${isMobile  ? "w-[40%] h-[50%] " : "w-[50%] h-[40%]"} flex items-center justify-center`}>
+       <Countdown />
+    </div>
+     
       <motion.div 
        initial={{ y: 20 }}
        whileInView={{ y: 0 }}
        transition={{ duration: 1, delay:  1 }}
-      className={`text-below w-[80%] ${isMobile ? "text-center  text-sm leading-4 mt-[6%]" : " text-center text-xl leading-6"}    opacity-60   font-serif text-black`}><p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur voluptatem deleniti, sunt nostrum laboriosam nulla reprehenderit ut provident magnam similique aperiam expedita veniam aliquid illo ratione atque saepe! Nemo dolor dicta cum optio corrupti minus?</p></motion.div>
+      className={`text-below w-[80%] ${isMobile ? "text-center  text-sm leading-4 " : " text-center text-xl leading-6"}    opacity-60   font-serif text-black`}><p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur voluptatem deleniti, sunt nostrum laboriosam nulla reprehenderit ut provident magnam similique aperiam expedita veniam aliquid illo ratione atque saepe! Nemo dolor dicta cum optio corrupti minus?</p></motion.div>
     </div>
 
-    <div className={`${isMobile ? "flex-col h-[70%]  w-[100%]" : "w-[50%]  h-full"} site-name  flex  items-center   gap-3 `}>
-          <div className={` ${isMobile ? "w-full h-[100%] items-center" : "w-[40%] h-fit items-start"}  flex flex-col  justify-center   `}>
+    <div className={`${isMobile ? "flex-col h-[75%]  w-[100%]" : "w-[50%]  h-full"} site-name  flex  items-center   `}>
+          <div className={` ${isMobile ? "w-full h-[90%] items-center" : "w-[40%] h-fit items-start justify-center  "}  flex flex-col   `}>
             {projects.map((item,index)=>{
               return(
               <div className='w-fit shadow-lg border-b-2 border-black h-fit flex flex-col items-center'>
  <motion.h1
                 initial={{opacity: 0, scale: 0}}
                 whileInView={{scale : 1, opacity : 1}}
-                transition={{duration : 1, delay : index*0.2}}
+                transition={{duration : 1, delay : index*0.1}}
                 whileHover={{scale: 1.2, transition: { duration: 0.1 }, color : "black"}}
  
  className={`w-fit ${isMobile? "text-[4vw] h-[4vh] " : "text-[1vw] h-[5vh]"}  text-gray-600   flex items-center justify-start`}>{item}</motion.h1>
@@ -160,7 +164,7 @@ isMobile && (tl.to('.workvideo',{
             })}
            
           </div>
-          <div className={` ${isMobile ? "w-[100%] " : "w-[50%]"} flex items-center justify-center text-black leading-8 flex-col`}>
+          <div className={` ${isMobile ? "w-[100%] gap-[2%] " : "w-[50%] flex-col"} flex items-center justify-center text-black leading-8 `}>
             <h1 className={`${isMobile ? "text-[4vw]" : "text-[2vw]"}  font-serif opacity-80`}>Check Out Our </h1>
             <Link to={'/portfolio'}>
                  <div className="w-full flex items-center justify-center">

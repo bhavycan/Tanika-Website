@@ -112,7 +112,7 @@ const Review = () => {
               }}
               whileInView={{ y: 0, rotate: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className={`inline-block  ${isMobile ? "mt-5 h-full" : "mt-7"} `}
+              className={`inline-block  ${isMobile ? "mt-[7%] h-full" : "mt-[2%]"} `}
             >
               testimony
             </motion.span>

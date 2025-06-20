@@ -47,7 +47,7 @@ const Countdown = () => {
 
 
   return (
-    <div ref={sectionRef} className={` ${isMobile ? "w-[50%]" : "w-full "} h-[38%] px-5 text-black  flex relative  justify-center `}>
+    <div ref={sectionRef} className={` w-full h-full  px-5 text-black  flex relative   justify-center `}>
         <motion.h1 
         
         className={`font-serif  h-fit absolute  ${isMobile ? "top-0 text-[22vw]" : "-top-20 text-[20vw] "}  `}>{count}
