@@ -22,7 +22,10 @@
 
 }
 
-
+body.loading {
+  visibility: hidden;
+  overflow: hidden;
+}
 
 .italiana-regular {
   font-family: "Italiana", sans-serif;

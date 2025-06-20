@@ -44,6 +44,11 @@ const Contact = () => {
        
       })
 
+
+setTimeout(() => {
+      ScrollTrigger.refresh()
+    }, 1000)
+
       return () => {
         window.removeEventListener('resize', checkMobile);
         tl.kill(); // Kill GSAP timeline to prevent duplicate animations

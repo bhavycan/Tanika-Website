@@ -5,6 +5,7 @@ const Portfolio = lazy(()=> import('./components/portfolio/Portfolio'))
 const Services = lazy(()=> import('./components/services/Services'))
 import LocomotiveScroll from 'locomotive-scroll';
 import ScrollToTop from './components/ScrollToTop';
+import gsap, { ScrollTrigger } from 'gsap/all'
 
 const App = () => {
   const location = useLocation();
@@ -12,12 +13,16 @@ const App = () => {
 const locomotiveScroll = new LocomotiveScroll();
 
   useEffect(() => {
-
+  gsap.registerPlugin(ScrollTrigger)
  const scroll = new LocomotiveScroll({
     el: scrollRef.current,
     smooth: true,
   });
 
+    setTimeout(() => {
+    document.body.classList.remove('loading');
+    ScrollTrigger.refresh();
+  }, 1000);
 
     let previousWidth = window.innerWidth;
   

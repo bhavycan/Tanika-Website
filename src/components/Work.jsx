@@ -85,7 +85,11 @@ isMobile && (tl.to('.workvideo',{
       transformOrigin: 'center',
     });
 
+    setTimeout(() => {
+      ScrollTrigger.refresh()
+    }, 1000)
    
+    
   
     return () => {
       window.removeEventListener('resize', checkMobile);
@@ -100,7 +104,11 @@ isMobile && (tl.to('.workvideo',{
 
 
         {isMobile && (<div className="workvideo absolute w-full p-3 h-full ">
-          <video autoPlay muted loop className='w-full h-full object-cover' src="/videos/work.mp4"></video>
+          <video playsInline
+  muted
+  autoPlay
+  loop
+  preload="auto" className='w-full h-full object-cover' id='bgVideo' src="/videos/work.mp4"></video>
         </div>)}
       
       <div  className={`container w-full relative  h-full flex   flex-col items-center ${isMobile ? "justify-center" : ""} `}>
@@ -120,7 +128,7 @@ isMobile && (tl.to('.workvideo',{
       </div>
 
     
-      <div className={`work-part top-[0%] ${isMobile ? "flex-col" : " "}   opacity-0 absolute flex items-center justify-center gap-2 w-full h-[90vh]`}>
+      <div className={`work-part top-[0%] ${isMobile ? "flex-col" : " "}   opacity-0 absolute flex items-center justify-center gap-2 w-full h-[90dvh] min-height-[90vh]`}>
 
     <div className={`countdown ${isMobile ? " w-[100%] h-[40%]" : "w-[50%]  h-full justify-center "}  flex items-center flex-col    `}>
       <Countdown />
