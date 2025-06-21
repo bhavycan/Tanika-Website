@@ -61,7 +61,7 @@ const [isMobile, setIsMobile] = useState(false);
         initial={{rotate: 180}}
         whileInView={{rotate : 0}}
         transition={{duration: 1}}
-        className={`circle  ${isMobile ? "w-[40%] h-[30%] -top-[10%] right-[70%]" : "w-[40%] h-[30%] -top-[10%] left-[80%]"} flex items-center justify-center rounded-full  absolute  bg-[#D22935]`}>
+        className={`circle  ${isMobile ? "w-[45%] h-[35%] -top-[5%] right-[70%]" : "w-[40%] h-[30%] -top-[10%] left-[80%]"} flex items-center justify-center rounded-full  absolute  bg-[#D22935]`}>
         <i className={`ri-arrow-down-line ${isMobile ? "text-[10vw]" : "text-[2vw]"}  text-white`}></i>
         </motion.div>
           <img

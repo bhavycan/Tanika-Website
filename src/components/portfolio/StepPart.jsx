@@ -60,14 +60,15 @@ const [isMobile, setIsMobile] = useState(false);
             onHoverStart={() => sethover(index)}
            
             onHoverEnd={() => sethover(null)}
-            className={`steps-part w-full  ${isMobile ? "h-[10vw] px-[2%] py-[1%]" : "h-[8vw] px-12 py-2"} mt-5 bg-yellow-300    flex items-center relative `}
+            className={`steps-part w-full  ${isMobile ? "h-[20vh] px-[2%] py-[1%]" : "h-[8vw] px-12 py-2"} mt-5 bg-yellow-300    flex items-center relative `}
           >
-            <div className="name bg-blue-500  w-[50%] h-full ">
+            <div className="name bg-blue-500  w-[50%]  ">
               <motion.h1 
               whileHover={{scale : 1.1, transformOrigin : "left", opacity : 1}}
-              className={`w-full h-full ${isMobile ? "text-[3.5vw]" : "text-[1.8vw]"} opacity-80    flex items-center`}>
+              className={`w-full  ${isMobile ? "text-[4.5vw]" : "text-[1.8vw]"} opacity-80    flex items-center`}>
                 {item.name}
               </motion.h1>
+              <div className="w-full h-[20vw] text-[2.5vw]"><h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur optio quaerat nostrum est architecto repudiandae labore assumenda. Mollitia, sapiente vel?</h2></div>
               <motion.div
                initial= {{ scaleX : 0,transformOrigin : "left", opacity : 0}}
                whileInView={{scaleX : .82, opacity: 1 }}
