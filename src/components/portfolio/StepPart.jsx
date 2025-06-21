@@ -51,7 +51,7 @@ const [isMobile, setIsMobile] = useState(false);
    
   return (
     
-    <div className={`main w-full bg-pink-300 ${isMobile ? "" : "mb-[20vh]"}  flex flex-col `}>
+    <div className={`main w-full ${isMobile ? "" : "mb-[20vh]"}  flex flex-col `}>
 
     {
         flats.map((item, index) => (
@@ -60,25 +60,37 @@ const [isMobile, setIsMobile] = useState(false);
             onHoverStart={() => sethover(index)}
            
             onHoverEnd={() => sethover(null)}
-            className={`steps-part w-full  ${isMobile ? "h-[20vh] px-[2%] py-[1%]" : "h-[8vw] px-12 py-2"} mt-5 bg-yellow-300    flex items-center relative `}
+            className={`steps-part w-full  ${isMobile ? "h-[20vh] px-[2%] py-[1%]" : "h-[8vw] px-12 py-2"} mt-5    flex items-center relative `}
           >
-            <div className="name bg-blue-500  w-[50%]  ">
+            <div className="name w-[50%] h-full  ">
               <motion.h1 
               whileHover={{scale : 1.1, transformOrigin : "left", opacity : 1}}
-              className={`w-full  ${isMobile ? "text-[4.5vw]" : "text-[1.8vw]"} opacity-80    flex items-center`}>
+              className={`w-full  ${isMobile ? "text-[5.5vw]" : "text-[1.8vw]"} opacity-80    flex items-center`}>
                 {item.name}
               </motion.h1>
-              <div className="w-full h-[20vw] text-[2.5vw]"><h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur optio quaerat nostrum est architecto repudiandae labore assumenda. Mollitia, sapiente vel?</h2></div>
+
+
+             <div className={`w-full  ${isMobile ? "h-[15vh]  text-[3vw]" :"h-[10vh] text-[1vw]"} `}><h2 className='opacity-75'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspenatur optio quaerat nostrum est architecto repudiandae labore assumenda. Mollitia, sapiente vel?</h2></div>
+
+   
+              
               <motion.div
                initial= {{ scaleX : 0,transformOrigin : "left", opacity : 0}}
-               whileInView={{scaleX : .82, opacity: 1 }}
+               whileInView={{scaleX : isMobile ? 1 : .82, opacity: 1 }}
                transition={{duration: .8, ease: "easeInOut"}}
               
               className="line w-full h-[1px] bg-black opacity-80"></motion.div>
             </div>
             <div className="location-year w-[50%] h-full  items-end flex flex-col justify-center">
-              <h2 className="text-[1vw]">{item.location}</h2>
-              <h3 className="text-[1vw]">{item.year}</h3>
+              <h2 className={`${isMobile ? "text-[3vw]" : "text-[1vw]"} `}>{item.location}</h2>
+              <h3 className={`${isMobile ? "text-[3vw] opacity-75" : "text-[1vw]"} `}>{item.year}</h3>
+               <motion.div 
+                      initial={{rotate: 180}}
+                      whileInView={{rotate : -90}}
+                      transition={{duration: 1}}
+                      className={`circle  ${isMobile ? "w-[20%] h-[20%] mt-[2%]  " : "w-[4vw] h-[6vw] mt-[2%] "} flex items-center justify-center rounded-full    bg-[#D22935]`}>
+                      <i className={`ri-arrow-down-line ${isMobile ? "text-[4vw]" : "text-[2vw]"}  text-white`}></i>
+                      </motion.div>
             </div>
       
 
