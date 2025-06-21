@@ -44,7 +44,7 @@ useEffect(() => {
                                          }}
                                         animate={{
                                           x: 0,
-                                          y : index=== 0 ? -10 : 0,
+                                          y : index=== 0 ? "-4%" : 0,
                                           color: index === 0 ? "#A1045A" : "#b71437",
                       opacity: 1,
                      fontSize: isMobile ? (index === 0 ?  "28vw" :  "25vw")  : "12vw",

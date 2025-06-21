@@ -1,31 +1,36 @@
 import { color, motion } from "framer-motion";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const HomePortfoio = () => {
   const title = ["work", "that", "speaks!"];
+const [isMobile, setIsMobile] = useState(false);
+   useEffect(() => {
+      const checkMobile = () => {
+        setIsMobile(window.innerWidth <= 480);
+      };
+      
+      checkMobile();
+      window.addEventListener("resize", checkMobile);
+      return () => window.removeEventListener("resize", checkMobile);
+    }, []);
 
-  const cluster = (string) => {
-    let arr = [];
-    for (let i = 0; i < string.length; i++) {
-      arr.push(string[i]);
-    }
-    return arr;
-  };
   return (
-    <div className="w-full h-[100vh]  relative flex items-center justify-center overflow-hidden  ">
-      <div className="left w-[50%] h-full  pt-1">
-        <motion.div className="w-[100%]   h-[50%] overflow-hidden text-black mt-[15%]  ">
+    <div className="w-full h-[100vh]  relative flex items-center  justify-center overflow-hidden  ">
+
+      <div className={` ${isMobile ? "flex-col w-[85%] h-[90%] " : "items-center w-[80%] h-[80%]"}  flex   justify-center`}>
+      <div className={`left  ${isMobile ? "w-[100%] h-[50%] " : "w-[50%] h-[100%] "}     `}>
+        <motion.div className="w-[100%]   h-[65%]  text-black   ">
           {title.map((item, index) => {
             return (
-              <div className="w-full relative">
-                <h1 className="w-full text-[10vw] uppercase  h-[9vw] flex items-center justify-end ">
+              <div className={`w-full ${isMobile  ? "h-[20vw]" : "h-[9vw]"}   flex items-center justify-center  relative`}>
+                <h1 className={`w-full  uppercase ${isMobile  ? "text-[22vw]" : "text-[10vw] justify-end"}   flex items-center  `}>
                   {item}
                 </h1>
                 <motion.h1 
                 initial={{x: 10, y: -10, opacity: 0}}
                 whileInView={{x : -5, y : 5, opacity: .1}}
                 transition={{duration: 1}}
-                className="w-full absolute top-1 left-1   text-[10vw] uppercase  h-[9vw] flex items-center justify-end ">
+                className={`w-full absolute top-1 left-1 ${isMobile ? "text-[22vw] h-[20vw] " : "text-[10vw] h-[9vw] justify-end"}    uppercase   flex items-center  `}>
                   {item}
                 </motion.h1>
               </div>
@@ -34,14 +39,14 @@ const HomePortfoio = () => {
         </motion.div>
 
         <motion.div
-                       initial= {{ scaleX : 0,transformOrigin : "right", opacity : 0}}
-                       whileInView={{scaleX : .82, opacity: 1 }}
+                       initial= {{ scaleX : 0,transformOrigin : isMobile ? "left" :"right", opacity : 0}}
+                       whileInView={{scaleX : isMobile ? 1 : .82, opacity: 1 }}
                        transition={{duration: .8, ease: "easeInOut"}}
                       
-                      className="line w-[100%]  h-[2px] mt-10 bg-black opacity-80"></motion.div>
+                      className="line w-[100%] mt-1  h-[2px] bg-black opacity-80"></motion.div>
 
-        <div className="para w-[100%] h-[15%]  mt-2 flex items-center justify-end text-right   font-semibold">
-          <h2 className="w-[70%] opacity-70">
+        <div className={`para w-[100%] h-[30%] flex ${isMobile ? "leading-4" : ""} pt-[3%] justify-end text-right   font-semibold`}>
+          <h2 className={` opacity-70 ${isMobile ? "text-[3.5vw] w-[90%]" : "text-[1.1vw] w-[90%]"} `}>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla amet
             ipsam quia at sequi facere nemo laudantium consequatur, doloribus
             quidem voluptatum a repudiandae, veritatis, et sit atque tempora
@@ -49,15 +54,15 @@ const HomePortfoio = () => {
           </h2>
         </div>
       </div>
-      <div className="right w-[40%] h-full pt-1 mt-[15%] ml-10 flex item-center justify-start">
+      <div className={`right ${isMobile ? "w-[100%] h-[50%]  items-center justify-end" : "w-[50%] h-full item-center justify-start"}  pt-1  pl-[2%] flex `}>
        
-        <div className="image w-[65%] h-[70%]  relative shadow-2xl">
+        <div className={`image ${isMobile ? "w-[90%] h-[100%] " : "w-[75%] h-[86%]"}   relative shadow-2xl`}>
         <motion.div 
         initial={{rotate: 180}}
         whileInView={{rotate : 0}}
         transition={{duration: 1}}
-        className="circle w-32 h-32 flex items-center justify-center rounded-full  absolute -top-12 left-[80%] bg-[#D22935]">
-        <i className="ri-arrow-down-line text-[2vw] text-white"></i>
+        className={`circle  ${isMobile ? "w-[40%] h-[30%] -top-[10%] right-[70%]" : "w-[40%] h-[30%] -top-[10%] left-[80%]"} flex items-center justify-center rounded-full  absolute  bg-[#D22935]`}>
+        <i className={`ri-arrow-down-line ${isMobile ? "text-[10vw]" : "text-[2vw]"}  text-white`}></i>
         </motion.div>
           <img
             className="w-full h-full object-cover"
@@ -65,6 +70,7 @@ const HomePortfoio = () => {
             alt=""
           />
         </div>
+      </div>
       </div>
     </div>
   );

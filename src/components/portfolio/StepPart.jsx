@@ -4,6 +4,17 @@ import React, { useEffect, useState } from 'react'
 
 const StepPart = () => {
     const [ishover, sethover] = useState(null)
+const [isMobile, setIsMobile] = useState(false);
+   useEffect(() => {
+      const checkMobile = () => {
+        setIsMobile(window.innerWidth <= 480);
+      };
+      
+      checkMobile();
+      window.addEventListener("resize", checkMobile);
+      return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+
     const flats = [
         {
           name: "Malabar Exotica",
@@ -40,7 +51,7 @@ const StepPart = () => {
    
   return (
     
-    <div className="main w-full  flex flex-col mb-[20vh]">
+    <div className={`main w-full bg-pink-300 ${isMobile ? "" : "mb-[20vh]"}  flex flex-col `}>
 
     {
         flats.map((item, index) => (
@@ -49,12 +60,12 @@ const StepPart = () => {
             onHoverStart={() => sethover(index)}
            
             onHoverEnd={() => sethover(null)}
-            className="steps-part w-full h-[8vw] mt-5    flex items-center relative px-12 py-2"
+            className={`steps-part w-full  ${isMobile ? "h-[10vw] px-[2%] py-[1%]" : "h-[8vw] px-12 py-2"} mt-5 bg-yellow-300    flex items-center relative `}
           >
-            <div className="name  w-[50%] h-full ">
+            <div className="name bg-blue-500  w-[50%] h-full ">
               <motion.h1 
               whileHover={{scale : 1.1, transformOrigin : "left", opacity : 1}}
-              className="w-full h-full opacity-80   text-[1.8vw] flex items-center">
+              className={`w-full h-full ${isMobile ? "text-[3.5vw]" : "text-[1.8vw]"} opacity-80    flex items-center`}>
                 {item.name}
               </motion.h1>
               <motion.div

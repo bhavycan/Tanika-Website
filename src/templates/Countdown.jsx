@@ -50,14 +50,14 @@ const Countdown = () => {
     <div ref={sectionRef} className={` w-full h-full  px-5 text-black  flex relative   justify-center `}>
         <motion.h1 
         
-        className={`font-serif  h-fit absolute  ${isMobile ? "top-0 text-[22vw]" : "-top-20 text-[20vw] "}  `}>{count}
+        className={`font-serif  flex items-center justify-center  absolute  ${isMobile ? "top-0 text-[22vw]  h-[22vw]" : "-top-20 text-[20vw]  h-[20vw] "}  `}>{count}
             
            
              <motion.span 
              initial = {{opacity : 0, scale : 2}}
              whileInView={{opacity : 1, scale : 1}}
                 transition={{duration : 1, delay : 2}}
-             className='inline-block text-[10vw] font-bold absolute '>+</motion.span></motion.h1>
+             className='inline-block text-[10vw] font-bold absolute -top-[20%] left-[100%] '>+</motion.span></motion.h1>
     </div>
   )
 }
