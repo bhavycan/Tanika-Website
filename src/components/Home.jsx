@@ -76,13 +76,13 @@ const Home = () => {
       <div
         data-scroll-container
         ref={scrollRef}
-        className="relative w-full min-h-screen overflow-hidden"
+        className="relative w-full min-h-screen"
       >
         {/* ✅ scroll-speed works here */}
         <div
           data-scroll
           data-scroll-speed={isMobile ? "" : "1"}
-          className={`image w-full absolute z-10 overflow-hidden -top-10 ${isMobile ? "h-[120vh]" : "h-[150vh]"}`}
+          className={`image w-full absolute z-10 overflow-hidden -top-10 ${isMobile ? "h-[120vh]" : "h-[150vh] "}`}
         >
           <img
             className={`${isMobile ? "object-cover object-[30%_75%]" : "object-cover"} w-full h-full relative`}
@@ -214,7 +214,7 @@ const Home = () => {
             <div
               className={`menu-container ${
                 isMobile ? "w-[89%] h-[85vh]" : "w-[30%] h-[95vh]"
-              } absolute z-50 top-0 left-0`}
+              } absolute z-50 -top-[2%] left-0`}
             >
               <Menubar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
             </div>

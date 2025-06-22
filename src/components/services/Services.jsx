@@ -4,6 +4,7 @@ import HomeService from './HomeService'
 import Process from './Process'
 import ServiceWorkBanner from '../../templates/ServiceWorkBanner'
 import Offer from '../Offer'
+import BuildService from './BuildService'
 
 
 
@@ -17,6 +18,7 @@ const Services = () => {
     <HomeService />
     <Process />
     <Offer imagelink={background} />
+    <BuildService />
     </div>
   )
 }
