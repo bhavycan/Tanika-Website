@@ -16,9 +16,10 @@ const Services = () => {
     <div className="main w-full  overflow-hidden ">
      
     <HomeService />
-    <Process />
+     <BuildService />
+   
     <Offer imagelink={background} />
-    <BuildService />
+    <Process />
     </div>
   )
 }

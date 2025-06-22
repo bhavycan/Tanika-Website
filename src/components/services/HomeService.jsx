@@ -33,7 +33,7 @@ useEffect(() => {
              <ServiceWorkBanner />
           </div>
         
-          <div className={`title ${isMobile ? "w-[100%] h-[32vh]" : "w-[50%] h-[45vh]"}  absolute z-20 flex flex-col  justify-center  items-center  `}>
+          <div className={`title ${isMobile ? "w-[100%] h-[32vh]" : "w-[50%] h-[45vh] shadow-2xl "}  absolute z-20 flex flex-col  justify-center  items-center  `}>
             <h1 className=' w-fit font-["Seasons"]  text-[#b71437]'> {slicer("Service").map((char, index) => {
                                   return (
                                     

@@ -1,13 +1,43 @@
+import { animate, easeInOut, motion } from 'framer-motion'
 import React from 'react'
 
-const BuildCard = () => {
+const BuildCard = ({ card }) => {
+
+   const animatesParams = {
+    x: card.id % 2 == 0 ? card.id * 10 : card.id * -10, // shift in x-axis
+    y: card.id % 2 == 0 ? card.id * 10 : card.id * -5, // shift in y-axis
+    rotate:   card.id % 2 == 0 ? card.rotate + card.id * 2 : card.rotate + card.id * -4 ,
+  }
   return (
-    <div className='w-[25vw] h-[60vh] bg-zinc-400 px-3 py-3 rounded-xl'>
-        <div className="indside-box w-[100%] h-[85%] overflow-hidden bg-red-300 rounded-3xl">
-            <img loading='lazy' className='w-full h-full object-cover' src="/images/livingroom.png" alt="" />
-        </div>
-        <div className="text-tag w-[100%] h-[15%]  py-3 flex items-center justify-center text-[2vw] font-['Seasons'] "><h1>This is my service</h1></div>
-    </div>
+    <motion.div
+      drag
+      dragElastic={0.3}
+       dragConstraints={{ top: -400, bottom: 400, left: -400, right: 400 }}
+       whileDrag={{ scale: 1.05, zIndex: 999 }}
+        initial={{ x: 0, y: 0, rotate: card.rotate }}
+        whileInView={animatesParams}
+       transition={{duration: 1, delay: 0.1 * card.id, ease: easeInOut}}
+       viewport={{ once: true, amount: 0.5 }}
+      className={`w-[20vw] h-[50vh] bg-white shadow-2xl  absolute px-3 py-3 rounded-xl`}
+      style={{
+        top: card.top,
+        left: card.left,
+        
+      }}
+    >
+      <div className="inside-box w-full h-[85%] overflow-hidden pointer-events-none rounded-3xl">
+        <img
+          loading="lazy"
+          className="w-full h-full object-cover"
+          src={card.image}
+          alt={card.tag}
+          
+        />
+      </div>
+      <div className="text-tag w-full h-[15%] py-3 flex items-center justify-center text-[2vw] font-['Seasons']">
+        <h1>{card.tag}</h1>
+      </div>
+    </motion.div>
   )
 }
 
