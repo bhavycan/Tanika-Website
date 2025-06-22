@@ -3,9 +3,11 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import SitePage from './SitePage'
 const Portfolio = lazy(()=> import('./components/portfolio/Portfolio'))
 const Services = lazy(()=> import('./components/services/Services'))
+const Partners = lazy(()=> import( './components/Partners/Partners') )
 import LocomotiveScroll from 'locomotive-scroll';
 import ScrollToTop from './components/ScrollToTop';
 import gsap, { ScrollTrigger } from 'gsap/all'
+
 
 const App = () => {
   const location = useLocation();
@@ -44,6 +46,7 @@ const locomotiveScroll = new LocomotiveScroll();
         <Route path="/" element={<SitePage />} />
         <Route path="/services" element={<Services />} />
        <Route path='/portfolio' element={<Portfolio />} />
+        <Route path='/partners' element={<Partners />} />
       </Routes>
       </Suspense>
 

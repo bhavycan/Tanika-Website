@@ -36,7 +36,7 @@ const Menubar = ({ menuOpen, setMenuOpen }) => {
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1, zIndex: 50 }}
       exit={{ x: -100, opacity: 0, transition: { duration: 1 } }}
-      transition={{ duration: 1.5, ease: [0.68, -0.6, 0.32, 1.6], delay: 0.2 }}
+      transition={{ duration: 1, ease: [0.68, -0.6, 0.32, 1.6] }}
       className={` text-black absolute z-50  overflow-hidden  top-5  w-[100%] h-[100%] ${isMobile ? "pl-0" :"pl-4" }  pt-4 rounded-xl  ml-5 menu-container bg-red-100`}
     >
       <div className="menu w-full h-full absolute -z-10 bg-green-500 top-0 left-0">

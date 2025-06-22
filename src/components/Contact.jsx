@@ -149,7 +149,7 @@ setTimeout(() => {
               </div>
               <div className={`part w-full flex items-center  ${isMobile ? "gap-6 mt-[5%]": "gap-4"}`}>
               <i className={`ri-map-pin-fill  ${isMobile ? "text-[6vw]": "text-[2vw]"}`}></i>
-              <h1 className="text-xl font-semibold opacity-50"> <a target='_blank' href="https://www.google.com/maps/place/TANIKA+HOME+DECOR+%26+FURNISHING/@23.114447,72.5401888,16z/data=!4m16!1m9!3m8!1s0x395e83b3fdca6477:0x1a712dca5772d198!2sTANIKA+HOME+DECOR+%26+FURNISHING!8m2!3d23.1142289!4d72.5401798!9m1!1b1!16s%2Fg%2F11q47_h70x!3m5!1s0x395e83b3fdca6477:0x1a712dca5772d198!8m2!3d23.1142289!4d72.5401798!16s%2Fg%2F11q47_h70x?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoASAFQAw%3D%3D">SHOP 118, GANESH GLORY, 11, Jagatpur Rd, Gota, Ahmedabad, Gujarat 382470, India</a></h1>
+              <h1 className="text-xl font-semibold opacity-50"> <a target='_blank' href="https://www.google.com/maps/place/TANIKA+HOME+DECOR+%26+FURNISHING/@23.114447,72.5401888,16z/data=!4m16!1m9!3m8!1s0x395e83b3fdca6477:0x1a712dca5772d198!2sTANIKA+HOME+DECOR+%26+FURNISHING!8m2!3d23.1142289!4d72.5401798!9m1!1b1!16s%2Fg%2F11q47_h70x!3m5!1s0x395e83b3fdca6477:0x1a712dca5772d198!8m2!3d23.1142289!4d72.5401798!16s%2Fg%2F11q47_h70x?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoASAFQAw%3D%3D"> GANESH GLORY, 11, Jagatpur Rd, Gota, Ahmedabad, Gujarat 382470, India</a></h1>
               </div>
               <div className={`part w-full flex items-center gap-4 ${isMobile ? "mt-[10%]": ""}`}>
            <a target='_blank' href="https://www.facebook.com/profile.php?id=100095570019444">   <i className={`ri-facebook-box-fill  ${isMobile ? "text-[7vw]": "text-[2vw]"}`}></i></a> 
