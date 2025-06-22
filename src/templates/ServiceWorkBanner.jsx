@@ -29,13 +29,13 @@ useEffect(() => {
 
       
   return (
-    <div className='w-full h-[100vh]  overflow-hidden '>
+    <div className='w-full h-[100vh] bg-black overflow-hidden '>
         <motion.div 
        
 
-        className="w-full h-full text-black">
+        className="w-full h-full bg-white text-black">
             <div className="flex">
-<div className='w-full h-full  flex flex-col'>
+<div className='w-full h-full flex flex-col'>
     {background.map((item,i)=>{
         return(
             <div className={`w-full h-full flex `}>

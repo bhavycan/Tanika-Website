@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import BuildCard from '../../templates/BuildCard'
 
 const BuildService = () => {
 
+
+  const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      const checkMobile = () => {
+        setIsMobile(window.innerWidth <= 480);
+      };
+      
+      checkMobile();
+      window.addEventListener("resize", checkMobile);
+      return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+  
+
+  const constraintsRef = useRef(null)
 
    const cards = [
   {
@@ -50,23 +65,25 @@ const BuildService = () => {
 
   return (
     <div className='w-full h-[100vh]  flex items-center justify-center overflow-hidden  relative'>
-            <div className="title w-[60%] flex flex-col items-center justify-center px-[10%] h-[80%]">
-                <h1 className='w-full h-[30%]   text-[10vw] flex items-center font-["Seasons"]'>Brick</h1>
-                <h1 className='w-full h-[2%] text-gray-500 font-bold text-[5vw]  flex items-center justify-center font-["Brittany"]'>By</h1>
-                <h1 className='w-full h-[30%] text-[10vw] flex items-center ml-[15%] justify-end font-["Seasons"]'>Brick</h1>
+            <div className={`title  ${isMobile ? "w-[90%] h-[50%]" : "w-[60%] h-[80%]"}  flex flex-col items-center justify-center px-[10%] `}>
+                <h1 className={`w-full  ${isMobile ? "h-[30%] text-[30vw]" : "h-[30%] text-[10vw]"}    flex items-center font-["Seasons"]`}>Brick</h1>
+                <h1 className={`w-full ${isMobile ? "h-[2%] text-[15vw]" : "h-[2%] text-[5vw]"}  text-gray-500 font-bold   flex items-center justify-center font-["Brittany"]`}>By</h1>
+                <h1 className={`w-full  ${isMobile ? "h-[30%] text-[30vw]" : "h-[30%] text-[10vw] justify-end"}     flex items-center font-["Seasons"]`}>Brick</h1>
             </div>
 
-            <div className='w-full h-full flex items-center justify-center absolute'>
+            <div ref={constraintsRef} className={`w-full h-full ${isMobile ? "top-0 -left-[15%]" : ""} flex items-center justify-center absolute z-10`}>
 
     {cards.map((item,index)=>{
       return(
-        <BuildCard  card = {item}/>
+        <BuildCard  card = {item} constraint ={constraintsRef}/>
       )
     })}
 
                
             </div>
-        
+        {isMobile && (
+          <div className='w-full absolute top-[80%] h-[10%]'><h1 className='w-full h-full flex items-center justify-center text-[10vw] font-["Seasons"]'>Drag It</h1></div>
+        )}
     </div>
   )
 }

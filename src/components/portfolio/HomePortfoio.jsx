@@ -23,9 +23,13 @@ const [isMobile, setIsMobile] = useState(false);
           {title.map((item, index) => {
             return (
               <div className={`w-full ${isMobile  ? "h-[20vw]" : "h-[9vw]"}   flex items-center justify-center  relative`}>
-                <h1 className={`w-full  uppercase ${isMobile  ? "text-[22vw]" : "text-[10vw] justify-end"}   flex items-center  `}>
+                <motion.h1
+                  initial={{x: -5, y: 5, opacity: 0}}
+                whileInView={{x : 5, y : -5, opacity: 1}}
+                transition={{duration: 1}}
+                className={`w-full  uppercase ${isMobile  ? "text-[22vw]" : "text-[10vw] justify-end"}   flex items-center  `}>
                   {item}
-                </h1>
+                </motion.h1>
                 <motion.h1 
                 initial={{x: 10, y: -10, opacity: 0}}
                 whileInView={{x : -5, y : 5, opacity: .1}}
@@ -46,12 +50,16 @@ const [isMobile, setIsMobile] = useState(false);
                       className="line w-[100%] mt-1  h-[2px] bg-black opacity-80"></motion.div>
 
         <div className={`para w-[100%] h-[30%] flex ${isMobile ? "leading-4" : ""} pt-[3%] justify-end text-right   font-semibold`}>
-          <h2 className={` opacity-70 ${isMobile ? "text-[3.5vw] w-[90%]" : "text-[1.1vw] w-[90%]"} `}>
+          <motion.h2
+          initial={{x: -10,opacity : 0}}
+          whileInView={{opacity : .8, x: 0}}
+          transition={{duration : 1, delay : .2}}
+          className={` opacity-70 ${isMobile ? "text-[3.5vw] w-[90%]" : "text-[1.1vw] w-[90%]"} `}>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla amet
             ipsam quia at sequi facere nemo laudantium consequatur, doloribus
             quidem voluptatum a repudiandae, veritatis, et sit atque tempora
             perspiciatis? Labore modi asp
-          </h2>
+          </motion.h2>
         </div>
       </div>
       <div className={`right ${isMobile ? "w-[100%] h-[50%]  items-center justify-end" : "w-[50%] h-full item-center justify-start"}  pt-1  pl-[2%] flex `}>

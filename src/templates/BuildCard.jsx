@@ -1,7 +1,22 @@
 import { animate, easeInOut, motion } from 'framer-motion'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-const BuildCard = ({ card }) => {
+const BuildCard = ({ card ,constraint}) => {
+
+
+
+  const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      const checkMobile = () => {
+        setIsMobile(window.innerWidth <= 480);
+      };
+      
+      checkMobile();
+      window.addEventListener("resize", checkMobile);
+      return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+  
 
    const animatesParams = {
     x: card.id % 2 == 0 ? card.id * 10 : card.id * -10, // shift in x-axis
@@ -12,13 +27,13 @@ const BuildCard = ({ card }) => {
     <motion.div
       drag
       dragElastic={0.3}
-       dragConstraints={{ top: -400, bottom: 400, left: -400, right: 400 }}
+       dragConstraints={constraint}
        whileDrag={{ scale: 1.05, zIndex: 999 }}
         initial={{ x: 0, y: 0, rotate: card.rotate }}
         whileInView={animatesParams}
        transition={{duration: 1, delay: 0.1 * card.id, ease: easeInOut}}
        viewport={{ once: true, amount: 0.5 }}
-      className={`w-[20vw] h-[50vh] bg-white shadow-2xl  absolute px-3 py-3 rounded-xl`}
+      className={` ${isMobile ? "w-[50vw] h-[30vh]" : "w-[20vw] h-[50vh]"} bg-white shadow-2xl  absolute px-3 py-3 rounded-xl`}
       style={{
         top: card.top,
         left: card.left,

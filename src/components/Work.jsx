@@ -142,7 +142,7 @@ isMobile && (tl.to('.workvideo',{
       <motion.div 
        initial={{ y: 20, opacity : 0 }}
        whileInView={{ y: 0, opacity : 60 }}
-       transition={{ duration: 1, delay:  1 }}
+       transition={{ duration: 1, delay:  .5 }}
       className={`text-below w-[80%] ${isMobile ? "text-center  text-sm leading-4 " : " text-center text-xl leading-6"}    opacity-60   font-serif text-black`}><p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur voluptatem deleniti, sunt nostrum laboriosam nulla reprehenderit ut provident magnam similique aperiam expedita veniam aliquid illo ratione atque saepe! Nemo dolor dicta cum optio corrupti minus?</p></motion.div>
     </div>
 
