@@ -1,30 +1,42 @@
 import { motion } from 'framer-motion'
 import { easeIn } from 'motion/react'
 import { div } from 'motion/react-client';
+import LocomotiveScroll from 'locomotive-scroll';
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 const HomePartners = () => {
 
 
       const [isMobile, setIsMobile] = useState(false);
-    
+    const scrollRef = useRef(null)
         useEffect(() => {
+
+  const scroll = new LocomotiveScroll({
+      el: scrollRef.current,
+      smooth: true,
+    });
+
+
+
           const checkMobile = () => {
             setIsMobile(window.innerWidth <= 480);
           };
           
           checkMobile();
           window.addEventListener("resize", checkMobile);
-          return () => window.removeEventListener("resize", checkMobile);
+          return () => {window.removeEventListener("resize", checkMobile);
+             scroll.destroy();
+          }
+
         }, []);
       
 
   return (
     <div className='w-full h-[100vh] flex flex-col items-center relative justify-center'>
         <motion.div
-        
-        
+        ref={scrollRef}
+         data-scroll-container
         className={`main-container   ${isMobile ? "w-[90%] h-[60%]  shadow-2xl " : "w-[60%] h-[70%] "} relative rounded-3xl overflow-hidden `}>
 
              {isMobile && (
@@ -44,10 +56,12 @@ const HomePartners = () => {
             initial={{opacity : 0 }}
             whileInView={{opacity : 1}}
             transition={{duration: 1}}
+             viewport={{ once: false, amount: 0.1 }} 
             className='w-full h-full object-cover' src={"/images/bedroomback.png"} alt="" />
        
              <motion.img
-
+                data-scroll
+                data-scroll-speed = "0.5"
              className={` z-20 ${isMobile ? "w-[100%] h-[80%] top-[18%]  " : "w-full top-[10%] -left-2 h-full"}  object-cover absolute   `} src="/images/bed.png" alt="" />
         </motion.div>
        
