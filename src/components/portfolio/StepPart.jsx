@@ -79,7 +79,7 @@ const [isMobile, setIsMobile] = useState(false);
                whileInView={{scaleX : isMobile ? 1 : .82, opacity: 1 }}
                transition={{duration: .8, ease: "easeInOut"}}
               
-              className="line w-full h-[1px] bg-black opacity-80"></motion.div>
+              className={`line w-full ${isMobile ? "mt-[5%]" : ""}  h-[1px] bg-black opacity-80`}></motion.div>
             </div>
             <div className="location-year w-[50%] h-full  items-end flex flex-col justify-center">
               <h2 className={`${isMobile ? "text-[3vw]" : "text-[1vw]"} `}>{item.location}</h2>

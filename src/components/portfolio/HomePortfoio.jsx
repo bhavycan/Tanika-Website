@@ -19,10 +19,10 @@ const [isMobile, setIsMobile] = useState(false);
 
       <div className={` ${isMobile ? "flex-col w-[85%] h-[90%] " : "items-center w-[80%] h-[80%]"}  flex   justify-center`}>
       <div className={`left  ${isMobile ? "w-[100%] h-[50%] " : "w-[50%] h-[100%] "}     `}>
-        <motion.div className="w-[100%]   h-[65%]  text-black   ">
+        <motion.div className="w-[100%]  h-[65%]  text-black   ">
           {title.map((item, index) => {
             return (
-              <div className={`w-full ${isMobile  ? "h-[20vw]" : "h-[9vw]"}   flex items-center justify-center  relative`}>
+              <div className={`w-full ${isMobile  ? "h-[30%]" : "h-[9vw]"}   flex items-center justify-center  relative`}>
                 <motion.h1
                   initial={{x: -5, y: 5, opacity: 0}}
                 whileInView={{x : 5, y : -5, opacity: 1}}
@@ -34,7 +34,7 @@ const [isMobile, setIsMobile] = useState(false);
                 initial={{x: 10, y: -10, opacity: 0}}
                 whileInView={{x : -5, y : 5, opacity: .1}}
                 transition={{duration: 1}}
-                className={`w-full absolute top-1 left-1 ${isMobile ? "text-[22vw] h-[20vw] " : "text-[10vw] h-[9vw] justify-end"}    uppercase   flex items-center  `}>
+                className={`w-full absolute top-7 left-1 ${isMobile ? "text-[22vw] h-[30%] " : "text-[10vw]  h-[30%] justify-end"}    uppercase   flex items-center  `}>
                   {item}
                 </motion.h1>
               </div>
@@ -47,14 +47,14 @@ const [isMobile, setIsMobile] = useState(false);
                        whileInView={{scaleX : isMobile ? 1 : .82, opacity: 1 }}
                        transition={{duration: .8, ease: "easeInOut"}}
                       
-                      className="line w-[100%] mt-1  h-[2px] bg-black opacity-80"></motion.div>
+                      className="line w-[100%]  h-[1px] bg-black opacity-80"></motion.div>
 
         <div className={`para w-[100%] h-[30%] flex ${isMobile ? "leading-4" : ""} pt-[3%] justify-end text-right   font-semibold`}>
           <motion.h2
           initial={{x: -10,opacity : 0}}
           whileInView={{opacity : .8, x: 0}}
-          transition={{duration : 1, delay : .2}}
-          className={` opacity-70 ${isMobile ? "text-[3.5vw] w-[90%]" : "text-[1.1vw] w-[90%]"} `}>
+          transition={{duration : 1,delay :1}}
+          className={` opacity-70 ${isMobile ? "text-[3.5vw] w-[90%] h-full" : "text-[1.1vw] w-[90%]"} `}>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla amet
             ipsam quia at sequi facere nemo laudantium consequatur, doloribus
             quidem voluptatum a repudiandae, veritatis, et sit atque tempora
@@ -69,7 +69,7 @@ const [isMobile, setIsMobile] = useState(false);
         initial={{rotate: 180}}
         whileInView={{rotate : 0}}
         transition={{duration: 1}}
-        className={`circle  ${isMobile ? "w-[45%] h-[35%] -top-[5%] right-[70%]" : "w-[40%] h-[30%] -top-[10%] left-[80%]"} flex items-center justify-center rounded-full  absolute  bg-[#D22935]`}>
+        className={`circle  ${isMobile ? "w-[35%] h-[32%] -top-[5%] right-[80%]" : "w-[40%] h-[30%] -top-[10%] left-[80%]"} flex items-center justify-center rounded-full  absolute  bg-[#D22935]`}>
         <i className={`ri-arrow-down-line ${isMobile ? "text-[10vw]" : "text-[2vw]"}  text-white`}></i>
         </motion.div>
           <img
