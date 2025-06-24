@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import React, { useState } from 'react'
 
-const PartnersCard = () => {
+const PartnersCard = ({card}) => {
   const [isFlipped, setFlipped] = useState(false)
 
   const handleClick = () => {
