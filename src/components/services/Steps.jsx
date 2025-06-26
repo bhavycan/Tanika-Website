@@ -42,10 +42,12 @@ const Steps = () => {
       {boxConfigs.map((config, index) => (
         <motion.div
           key={index}
-          className={`z-50 absolute bg-green-500 border-2 border-black ${
+          className={`z-50 absolute  overflow-hidden rounded-2xl bg-white shadow-2xl ${
             isMobile ? config.mobile : config.desktop
-          }`}
-        />
+          }`}>
+            
+            <img className="w-full h-full object-cover " src={`/images/steps/${index + 1}.png`} alt="" />
+             </motion.div>
       ))}
     </>
   );
