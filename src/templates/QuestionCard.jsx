@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import React, { useState } from 'react'
-
-const PartnersCard = ({card}) => {
+const QuestionCard = () => {
   const [isFlipped, setFlipped] = useState(false)
 
   const handleClick = () => {
@@ -45,4 +44,4 @@ const PartnersCard = ({card}) => {
   )
 }
 
-export default PartnersCard
+export default QuestionCard
