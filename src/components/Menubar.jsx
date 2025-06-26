@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Menubar = ({ menuOpen, setMenuOpen }) => {
-  const pageName = ["Portfolio", "Services", "Partners", "Quote"];
+  const pageName = ["Portfolio", "Services", "Partners", "FAQs"];
    const [isMobile, setIsMobile] = useState(false);
   const slicer = (name) => {
     const arr = [];
@@ -39,7 +39,7 @@ const Menubar = ({ menuOpen, setMenuOpen }) => {
       transition={{ duration: 1, ease: [0.68, -0.6, 0.32, 1.6] }}
       className={` text-black absolute z-50  overflow-hidden  top-5  w-[100%] h-[100%] ${isMobile ? "pl-0" :"pl-4" }  pt-4 rounded-xl  ml-5 menu-container bg-red-100`}
     >
-      <div className="menu w-full h-full absolute -z-10 bg-green-500 top-0 left-0">
+      <div className="menu w-full h-full absolute -z-10 top-0 left-0">
         <img
           className="-full h-full object-cover"
           src="https://images.unsplash.com/photo-1487147264018-f937fba0c817?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

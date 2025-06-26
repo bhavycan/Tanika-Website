@@ -4,9 +4,11 @@ import SitePage from './SitePage'
 const Portfolio = lazy(()=> import('./components/portfolio/Portfolio'))
 const Services = lazy(()=> import('./components/services/Services'))
 const Partners = lazy(()=> import( './components/Partners/Partners') )
+const FAQs = lazy(()=>import('./components/FAQs/FAQs'))
 import LocomotiveScroll from 'locomotive-scroll';
 import ScrollToTop from './components/ScrollToTop';
 import gsap, { ScrollTrigger } from 'gsap/all'
+
 
 
 const App = () => {
@@ -47,6 +49,7 @@ const locomotiveScroll = new LocomotiveScroll();
         <Route path="/services" element={<Services />} />
        <Route path='/portfolio' element={<Portfolio />} />
         <Route path='/partners' element={<Partners />} />
+         <Route path='/faqs' element={<FAQs />} />
       </Routes>
       </Suspense>
 
