@@ -1,6 +1,5 @@
 import React from 'react'
 import HomePartners from './HomePartners'
-import PartnerFlipCards from './PartnerFlipCards'
 import SubPartners from './SubPartners'
 
 const Partners = () => {
