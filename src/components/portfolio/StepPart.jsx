@@ -51,7 +51,7 @@ const [isMobile, setIsMobile] = useState(false);
    
   return (
     
-    <div className={`main w-full ${isMobile ? "" : "mb-[20vh]"}  flex flex-col `}>
+    <div className={`main w-full ${isMobile ? "mb-[20vh]" : "mb-[20vh]"}  flex flex-col `}>
 
     {
         flats.map((item, index) => (

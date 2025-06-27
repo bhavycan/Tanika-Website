@@ -35,11 +35,16 @@ const Process = () => {
         setIsMobile(window.innerWidth <= 480);
       };
   
+      setTimeout(() => {
+            ScrollTrigger.refresh()
+          }, 1000)
+      
       checkMobile();
       window.addEventListener("resize", checkMobile);
   
        return () => {
         window.removeEventListener("resize", checkMobile);
+        tl.kill()
       };
 
   }, [])

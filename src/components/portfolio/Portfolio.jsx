@@ -1,10 +1,12 @@
 import React from 'react'
 import HomePortfoio from './HomePortfoio'
 import Siteindexing from './Siteindexing'
+import NavBar from '../../templates/NavBar'
 
 const Portfolio = () => {
   return (
-    <div className='w-full flex flex-col items-center  min-h-[100vh] overflow-hidden'>
+    <div className='w-full flex flex-col items-center   overflow-hidden'>
+      <NavBar />
     <HomePortfoio />
     <Siteindexing />
   </div>

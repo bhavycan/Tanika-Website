@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import QuestionCard from '../../templates/QuestionCard'
 import { motion } from 'framer-motion';
+import NavBar from '../../templates/NavBar';
 
 const Qna = () => {
 
@@ -54,7 +55,8 @@ const faqs = [
 
 
   return (
-    <div className='w-screen min-[100vh]'>
+    <div className='w-screen min-[100vh] overflow-hidden'>
+      <NavBar />
         <motion.div className='title w-full flex overflow-hidden flex-col items-center justify-center h-[40vh]  px-2 py-3 mt-[5%]'> 
             <motion.h1 
             initial={{x : 50 , opacity : 0}}
