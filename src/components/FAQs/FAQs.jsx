@@ -55,7 +55,7 @@ const faqs = [
 
 
   return (
-    <div className='w-screen min-[100vh] overflow-hidden'>
+    <div className='w-screen min-[100vh] overflow-hidden mb-[5%]'>
       <NavBar />
         <motion.div className='title w-full flex overflow-hidden flex-col items-center justify-center h-[40vh]  px-2 py-3 mt-[5%]'> 
             <motion.h1 
@@ -67,7 +67,7 @@ const faqs = [
             whileInView={{opacity : .8, scale :1            }}
              transition={{duration : 1 ,ease : "easeInOut", delay: .2}}
             className={`inline-block font-["Brittany"] ${isMobile ? "text-[25vw]" : "text-[12vw]"}  `}>s</motion.span></motion.h1>
-            <motion.div className={`   ${isMobile ? "w-[85%] h-[35%] leading-4 mt-[5%]" : "w-[50%] h-[30%] leading-5"}  flex items-center font-serif opacity-80"`}><motion.p
+            <motion.div className={`   ${isMobile ? "w-[85%] h-[35%] leading-4 mt-[5%]" : "w-[50%] h-[30%] leading-5"}  flex items-center font-serif "`}><motion.p
             initial={{x : -50 , opacity : 0}}
             whileInView={{ x : 0, opacity : 1}}
             transition={{duration : 1 ,ease : "easeInOut"}}
