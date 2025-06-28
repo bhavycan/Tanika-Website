@@ -2,6 +2,7 @@ import gsap, { ScrollTrigger } from "gsap/all";
 import { motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 import useIsMobile from "../hooks/useIsMobile";
+import NavBar from "../templates/NavBar";
 
 const Contact = () => {
   const mobileName = ["Contact", "Us"];
@@ -45,9 +46,10 @@ const Contact = () => {
     <div
       ref={parent}
       className={`  ${
-        isMobile ? " w-[200%] h-[100vh]" : "w-[200%] h-[100vh]"
+        isMobile ? " w-[200%] h-[100vh] " : "w-[200%] h-[100vh]"
       } overflow-hidden  text-black mt-20  flex  `}
     >
+     
       <div
         className={`imagecontainer  px-5 pt-5 pb-8  ${
           isMobile ? " w-[100%] h-full " : "w-[200%]   h-full"
@@ -239,6 +241,7 @@ const Contact = () => {
           </div>
         </motion.div>
       </div>
+
     </div>
   );
 };

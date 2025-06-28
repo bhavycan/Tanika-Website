@@ -7,7 +7,7 @@ const Countdown = () => {
     const [count, setCount] = useState(0);
   const sectionRef = useRef(null);
   let intervalRef = useRef(null);
-const isMobile = useIsMobile()
+const isMobile = useIsMobile
   useEffect(() => {
 
   
@@ -20,7 +20,7 @@ const isMobile = useIsMobile()
           // Start interval when in view
           intervalRef.current = setInterval(() => {
             setCount((prev) => (prev >= 50 ? prev : prev + 1));
-          }, 100);
+          }, 50);
         } else {
           // Clear interval when out of view
           clearInterval(intervalRef.current);
