@@ -2,21 +2,11 @@ import React, { useEffect, useState } from 'react'
 import QuestionCard from '../../templates/QuestionCard'
 import { motion } from 'framer-motion';
 import NavBar from '../../templates/NavBar';
+import useIsMobile from '../../hooks/useIsMobile';
 
 const Qna = () => {
 
-  const [isMobile, setIsMobile] = useState(false);
-
-  
-    useEffect(() => {
-        const checkMobile = () => {
-          setIsMobile(window.innerWidth <= 480);
-        };
-        
-        checkMobile();
-        window.addEventListener("resize", checkMobile);
-        return () => window.removeEventListener("resize", checkMobile);
-      }, []);
+   const isMobile = useIsMobile();
     
 const faqs = [
   {

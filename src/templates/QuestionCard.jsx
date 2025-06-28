@@ -1,24 +1,13 @@
 import { motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
+import useIsMobile from '../hooks/useIsMobile'
 const QuestionCard = ({card}) => {
   const [isFlipped, setFlipped] = useState(false)
 
   const handleClick = () => {
     setFlipped(prev => !prev)
   }
-
-    const [isMobile, setIsMobile] = useState(false);
-  
-    
-      useEffect(() => {
-          const checkMobile = () => {
-            setIsMobile(window.innerWidth <= 480);
-          };
-          
-          checkMobile();
-          window.addEventListener("resize", checkMobile);
-          return () => window.removeEventListener("resize", checkMobile);
-        }, []);
+const isMobile = useIsMobile()
 
   return (
     <div

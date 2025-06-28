@@ -1,18 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import StepPart from './StepPart'
+import useIsMobile from '../../hooks/useIsMobile'
 
 const Siteindexing = () => {
 
-const [isMobile, setIsMobile] = useState(false);
-   useEffect(() => {
-      const checkMobile = () => {
-        setIsMobile(window.innerWidth <= 480);
-      };
-      
-      checkMobile();
-      window.addEventListener("resize", checkMobile);
-      return () => window.removeEventListener("resize", checkMobile);
-    }, []);
+const isMobile = useIsMobile()
 
 
   return (

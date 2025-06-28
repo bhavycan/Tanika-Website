@@ -1,20 +1,11 @@
 import { motion } from 'framer-motion'
 
 import React, { useEffect, useState } from 'react'
+import useIsMobile from '../../hooks/useIsMobile'
 
 const StepPart = () => {
     const [ishover, sethover] = useState(null)
-const [isMobile, setIsMobile] = useState(false);
-   useEffect(() => {
-      const checkMobile = () => {
-        setIsMobile(window.innerWidth <= 480);
-      };
-      
-      checkMobile();
-      window.addEventListener("resize", checkMobile);
-      return () => window.removeEventListener("resize", checkMobile);
-    }, []);
-
+    const isMobile = useIsMobile()
     const flats = [
         {
           name: "Malabar Exotica",

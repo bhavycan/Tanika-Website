@@ -1,20 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
 import BuildCard from '../../templates/BuildCard'
+import useIsMobile from '../../hooks/useIsMobile'
 
 const BuildService = () => {
 
 
-  const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-      const checkMobile = () => {
-        setIsMobile(window.innerWidth <= 480);
-      };
-      
-      checkMobile();
-      window.addEventListener("resize", checkMobile);
-      return () => window.removeEventListener("resize", checkMobile);
-    }, []);
+  const isMobile = useIsMobile();
   
 
   const constraintsRef = useRef(null)

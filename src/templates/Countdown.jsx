@@ -1,20 +1,16 @@
 import { motion } from 'motion/react';
 import React, { useEffect, useRef, useState } from 'react'
 import { use } from 'react'
+import useIsMobile from '../hooks/useIsMobile';
 
 const Countdown = () => {
     const [count, setCount] = useState(0);
   const sectionRef = useRef(null);
   let intervalRef = useRef(null);
- const [isMobile, setIsMobile] = useState(false);
+const isMobile = useIsMobile()
   useEffect(() => {
 
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 480);
-    };
   
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
   
 
 
@@ -38,8 +34,7 @@ const Countdown = () => {
     }
 
     return () => {
-      window.removeEventListener("resize", checkMobile);
-      observer.disconnect();
+  observer.disconnect();
       clearInterval(intervalRef.current);
     };
   }, [isMobile]);

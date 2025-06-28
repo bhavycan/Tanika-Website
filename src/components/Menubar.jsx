@@ -1,10 +1,11 @@
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useIsMobile from "../hooks/useIsMobile";
 
 const Menubar = ({ menuOpen, setMenuOpen }) => {
   const pageName = ["Portfolio", "Services", "Partners", "FAQs"];
-   const [isMobile, setIsMobile] = useState(false);
+   const isMobile = useIsMobile();
   const slicer = (name) => {
     const arr = [];
     for (let index = 0; index < name.length; index++) {
@@ -15,18 +16,6 @@ const Menubar = ({ menuOpen, setMenuOpen }) => {
 
 
 
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 480);
-    };
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-
-     return () => {
-      window.removeEventListener("resize", checkMobile);
-    };
-  },[])
 
 
   return (

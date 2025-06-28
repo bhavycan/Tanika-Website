@@ -1,21 +1,12 @@
 import { animate, easeInOut, motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
+import useIsMobile from '../hooks/useIsMobile'
 
 const BuildCard = ({ card ,constraint}) => {
 
 
 
-  const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-      const checkMobile = () => {
-        setIsMobile(window.innerWidth <= 480);
-      };
-      
-      checkMobile();
-      window.addEventListener("resize", checkMobile);
-      return () => window.removeEventListener("resize", checkMobile);
-    }, []);
+  const isMobile = useIsMobile()
   
 
    const animatesParams = {
@@ -49,7 +40,7 @@ const BuildCard = ({ card ,constraint}) => {
           
         />
       </div>
-      <div className="text-tag w-full h-[15%] py-3 flex items-center justify-center text-[2vw] font-['Seasons']">
+      <div className={`text-tag ${isMobile ? " " : "text-[2vw]"} w-full h-[15%] py-3 flex items-center justify-center  font-['Seasons']`}>
         <h1>{card.tag}</h1>
       </div>
     </motion.div>

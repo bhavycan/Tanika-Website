@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion'
 import { div } from 'motion/react-client';
 import React, { useEffect, useState } from 'react'
+import useIsMobile from '../hooks/useIsMobile';
 
 const ServiceWorkBanner = () => {
     const background = ["ABCDEFGHIJKLMNO", "QRSTUVWXYZABCDEF", "ABCDEFGHIJKLMNO", "QRSTUVWXYZABCDEF", "ABCDEFGHIJKLMNO", "QRSTUVWXYZABCDEF"];
@@ -13,19 +14,7 @@ const ServiceWorkBanner = () => {
         return arr;
       };
 
-const [isMobile, setIsMobile] = useState(false);
-useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 480);
-    };
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-
-     return () => {
-      window.removeEventListener("resize", checkMobile);
-    };
-  },[])
+const isMobile = useIsMobile()
 
       
   return (

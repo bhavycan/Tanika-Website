@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react'
+import useIsMobile from '../../hooks/useIsMobile';
 
 const SubPartners = () => {
  const cardinfo = [
@@ -51,21 +52,14 @@ const SubPartners = () => {
     },]
 
 
-
+const isMobile  = useIsMobile()
 
  const [activeIndex, setActiveIndex] = useState(null);
-
- const [isMobile, setIsMobile] = useState(false);
 
 useEffect(() => {
 
   
-      const checkMobile = () => {
-        setIsMobile(window.innerWidth <= 480);
-      };
       
-      checkMobile();
-      window.addEventListener("resize", checkMobile);
     
     const handleClickOutside = (event) => {
       if (!event.target.closest(".card-deck ")) {
@@ -79,7 +73,7 @@ useEffect(() => {
       setActiveIndex(null);
     }, 2000);
  window.addEventListener("click", handleClickOutside);
-    return () => {clearTimeout(timeout);    window.removeEventListener("resize", checkMobile); window.removeEventListener("click", handleClickOutside) }
+    return () => {clearTimeout(timeout);     window.removeEventListener("click", handleClickOutside) }
   }
 }, [activeIndex]);
 

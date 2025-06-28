@@ -1,10 +1,11 @@
 import { motion } from 'motion/react';
 import { div, h1 } from 'motion/react-client';
 import React, { useEffect, useState } from 'react';
+import useIsMobile from '../hooks/useIsMobile';
 
 const Offer = ({imagelink}) => {
   const name = ["wonders", "with", "build"];
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useIsMobile()
   const services = [
     {
       items: ["Electrification", "Furniture", "Civil Work"],
@@ -35,15 +36,6 @@ const Offer = ({imagelink}) => {
 
 
 
-  useEffect(() => {
-      const checkMobile = () => {
-        setIsMobile(window.innerWidth <= 480);
-      };
-      
-      checkMobile();
-      window.addEventListener("resize", checkMobile);
-      return () => window.removeEventListener("resize", checkMobile);
-    }, []);
   
 
   // Reusable Component for Service Rows

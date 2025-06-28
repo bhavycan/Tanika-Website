@@ -7,9 +7,10 @@ import { useRef } from 'react'
 import Countdown from '../templates/Countdown'
 import { div } from 'motion/react-client'
 import { Link } from 'react-router-dom'
+import useIsMobile from '../hooks/useIsMobile'
 
 const Work = () => {
-   const [isMobile, setIsMobile] = useState(false);
+ const isMobile = useIsMobile()
   const parent = useRef(null)
 const projects = [
   "Avani Prastha, Sargasan Gandhinagar",
@@ -27,12 +28,7 @@ const projects = [
 ];
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 480);
-    };
-  
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
+    
   
     gsap.registerPlugin(ScrollTrigger);
   
@@ -95,7 +91,6 @@ isMobile && (tl.to('.workvideo',{
     
   
     return () => {
-      window.removeEventListener('resize', checkMobile);
       tl.kill(); // Kill GSAP timeline to prevent duplicate animations
     };
   }, [isMobile]);

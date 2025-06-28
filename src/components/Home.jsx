@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import Menubar from "./Menubar";
 import TypingHeading from "../templates/TypingHeading";
 import LocomotiveScroll from 'locomotive-scroll';
+import useIsMobile from "../hooks/useIsMobile";
 
 const Home = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useIsMobile()
   const [menuOpen, setMenuOpen] = useState(false);
   const scrollRef = useRef(null);
   
@@ -39,12 +40,7 @@ const Home = () => {
       smooth: true,
     });
 
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 480);
-    };
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
+   
 
     const handleClickOutside = (event) => {
       if (!event.target.closest(".menu-container") && !event.target.closest(".menu-button")) {
@@ -60,7 +56,7 @@ const Home = () => {
     window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("resize", checkMobile);
+      
       document.removeEventListener("click", handleClickOutside);
       window.removeEventListener("scroll", handleScroll);
       scroll.destroy();

@@ -4,11 +4,12 @@ import { div } from 'motion/react-client';
 import LocomotiveScroll from 'locomotive-scroll';
 
 import React, { useEffect, useRef, useState } from 'react'
+import useIsMobile from '../../hooks/useIsMobile';
 
 const HomePartners = () => {
 
 
-      const [isMobile, setIsMobile] = useState(false);
+     const isMobile = useIsMobile()
     const scrollRef = useRef(null)
         useEffect(() => {
 
@@ -19,13 +20,8 @@ const HomePartners = () => {
 
 
 
-          const checkMobile = () => {
-            setIsMobile(window.innerWidth <= 480);
-          };
-          
-          checkMobile();
-          window.addEventListener("resize", checkMobile);
-          return () => {window.removeEventListener("resize", checkMobile);
+        
+          return () => {
              scroll.destroy();
           }
 

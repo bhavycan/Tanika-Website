@@ -1,23 +1,9 @@
 import { motion } from "motion/react";
 import React, { useEffect, useState } from "react";
+import useIsMobile from "../hooks/useIsMobile";
 
 const Card = ({ value }) => {
-  const [isMobile, setIsMobile] = useState(false);
-    useEffect(() => {
-  
-      const checkMobile = () => {
-        setIsMobile(window.innerWidth <= 480);
-      };
-    
-      checkMobile();
-      window.addEventListener('resize', checkMobile);
-
-
-      return () => {
-        window.removeEventListener("resize", checkMobile);
-        
-      };
-    }, [isMobile]);
+  const isMobile = useIsMobile()
     
 console.log(value)
   return (

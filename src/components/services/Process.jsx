@@ -3,6 +3,7 @@ import ServiceWorkBanner from '../../templates/ServiceWorkBanner'
 import gsap, { ScrollTrigger } from 'gsap/all'
 import Steps from './Steps'
 import { motion } from 'framer-motion'
+import useIsMobile from '../../hooks/useIsMobile'
 
 const Process = () => {
   
@@ -10,7 +11,7 @@ const Process = () => {
   
   const parent = useRef(null)
 
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useIsMobile()
  
   
   useEffect(() => {
@@ -31,19 +32,17 @@ const Process = () => {
         
  
       })
-      const checkMobile = () => {
-        setIsMobile(window.innerWidth <= 480);
-      };
+      
   
       setTimeout(() => {
             ScrollTrigger.refresh()
           }, 1000)
       
-      checkMobile();
-      window.addEventListener("resize", checkMobile);
+      
+     
   
        return () => {
-        window.removeEventListener("resize", checkMobile);
+       
         tl.kill()
       };
 

@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 import Card from "../templates/Card";
 import { image } from "motion/react-client";
+import useIsMobile from "../hooks/useIsMobile";
 
 const Review = () => {
   const reviews = [
@@ -47,16 +48,11 @@ const Review = () => {
   const constraintsRef = useRef(null);
   let intervalRef = useRef(null);
   const selectionRef = useRef(null);
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useIsMobile()
   
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 480);
-    };
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
+   
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -84,7 +80,7 @@ const Review = () => {
     }
 
     return () => {
-      window.removeEventListener("resize", checkMobile);
+     
       observer.disconnect();
       clearInterval(intervalRef.current);
     };

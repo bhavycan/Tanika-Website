@@ -1,22 +1,12 @@
 import { motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import useIsMobile from '../hooks/useIsMobile'
 
 
 const NavBar = () => {
 const navigate = useNavigate()
-    const [isMobile, setIsMobile] = useState(false);
-    
-      
-        useEffect(() => {
-            const checkMobile = () => {
-              setIsMobile(window.innerWidth <= 480);
-            };
-            
-            checkMobile();
-            window.addEventListener("resize", checkMobile);
-            return () => window.removeEventListener("resize", checkMobile);
-          }, []);
+const isMobile = useIsMobile()
   return (
     <motion.div 
     initial={{ opacity : 0}}

@@ -1,18 +1,11 @@
 import { color, motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import useIsMobile from "../../hooks/useIsMobile";
 
 const HomePortfoio = () => {
   const title = ["work", "that", "speaks!"];
-const [isMobile, setIsMobile] = useState(false);
-   useEffect(() => {
-      const checkMobile = () => {
-        setIsMobile(window.innerWidth <= 480);
-      };
-      
-      checkMobile();
-      window.addEventListener("resize", checkMobile);
-      return () => window.removeEventListener("resize", checkMobile);
-    }, []);
+
+   const isMobile = useIsMobile()
 
   return (
     <div className="w-full h-[100vh]  relative flex items-center  justify-center overflow-hidden  ">

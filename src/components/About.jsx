@@ -1,21 +1,14 @@
 import gsap, { ScrollTrigger } from 'gsap/all'
 import { motion } from 'motion/react'
 import React, { useEffect, useRef, useState } from 'react'
+import useIsMobile from '../hooks/useIsMobile'
 
 const About = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useIsMobile()
   const name = ["Who", "we", "are?"]
   const mobileName =  ["What", "is our", "mission?"]
   
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 480);
-    };
-    
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
+
 
   return (
     <div 
