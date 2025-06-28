@@ -23,7 +23,7 @@ const Countdown = () => {
         if (entries[0].isIntersecting) {
           // Start interval when in view
           intervalRef.current = setInterval(() => {
-            setCount((prev) => (prev >= 30 ? prev : prev + 1));
+            setCount((prev) => (prev >= 50 ? prev : prev + 1));
           }, 100);
         } else {
           // Clear interval when out of view
