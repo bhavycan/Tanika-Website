@@ -1,69 +1,49 @@
-
 import { motion } from 'framer-motion'
-import { div } from 'motion/react-client';
-import React, { useEffect, useState } from 'react'
-import useIsMobile from '../hooks/useIsMobile';
+import React from 'react'
+import useIsMobile from '../hooks/useIsMobile'
 
 const ServiceWorkBanner = () => {
-    const background = ["ABCDEFGHIJKLMNO", "QRSTUVWXYZABCDEF", "ABCDEFGHIJKLMNO", "QRSTUVWXYZABCDEF", "ABCDEFGHIJKLMNO", "QRSTUVWXYZABCDEF"];
-    const slicer = (name) => {
-        const arr = [];
-        for (let index = 0; index < name.length; index++) {
-          arr.push(name[index]);
-        }
-        return arr;
-      };
+  const background = [
+    "ABCDEFGHIJKLMNO",
+    "QRSTUVWXYZABCDEF",
+    "ABCDEFGHIJKLMNO",
+    "QRSTUVWXYZABCDEF",
+    "ABCDEFGHIJKLMNO",
+    "QRSTUVWXYZABCDEF"
+  ]
 
-const isMobile = useIsMobile()
+  const slicer = (name) => name.split('')
 
-      
+  const isMobile = useIsMobile()
+
   return (
-    <div className='w-full h-[100vh] bg-black overflow-hidden '>
-        <motion.div 
-       
-
-        className="w-full h-full bg-white text-black">
-            <div className="flex">
-<div className='w-full h-full flex flex-col'>
-    {background.map((item,i)=>{
-        return(
-            <div className={`w-full h-full flex `}>
-            {slicer(item).map((char, index) => {
-                return (
-                    <motion.span 
-                    initial={{opacity: 0}}
-                    animate={{opacity: 0}}
-                    whileHover={{opacity : 1}}
-                    whileTap={{opacity : 1}}
-                    transition={{duration: 0.5}}
-                    key={index} className={` ${isMobile ? "w-[35vw] h-[35vw]" : "w-[9vw] h-[9vw]"}  flex items-center justify-center text-center ${isMobile ? "text-[35vw]" : "text-[10vw]"} text-[10vw] border-2 border-white`}>
-                        {char}
-                    </motion.span>
-                );
-            })}
+    <section className="w-full h-[100vh] bg-black overflow-hidden">
+      <motion.div className="w-full h-full bg-white text-black">
+        <div className="flex flex-col w-full h-full">
+          {background.map((item, i) => (
+            <div key={i} className="w-full flex h-full">
+              {slicer(item).map((char, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  whileTap={{ opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                  className={`
+                    flex items-center justify-center text-center
+                    border-2 border-white
+                    ${isMobile ? "w-[35vw] h-[35vw] text-[35vw]" : "w-[9vw] h-[9vw] text-[10vw]"}
+                  `}
+                >
+                  {char}
+                </motion.span>
+              ))}
             </div>
-        )
-    })}
-
-
- 
-    </div>
-  
-
-            </div>
-            
-        {/* <motion.h1 
-         initial={{ opacity: 0 }}
-         animate={{ opacity: 0 }}
-         whileHover={{ scale: 1.1, opacity: 1}}
-        className='w-full h-[9vw] flex items-center  text-[10vw] bg-red-200'>ABCDEFGHIJKLMNOP</motion.h1>
-        <motion.h1 className='w-full h-[9vw] flex items-center text-[10vw] bg-green-300'>QRSTUVWXYZABCDEF</motion.h1>
-        <motion.h1 className='w-full h-[9vw] flex items-center  text-[10vw] bg-red-200'>ABCDEFGHIJKLMNOP</motion.h1>
-        <motion.h1 className='w-full h-[9vw] flex items-center text-[10vw] bg-green-300'>QRSTUVWXYZABCDEF</motion.h1>
-        <motion.h1 className='w-full h-[9vw] flex items-center  text-[10vw] bg-red-200'>ABCDEFGHIJKLMNOP</motion.h1>
-        <motion.h1 className='w-full h-[9vw] flex items-center text-[10vw] bg-green-300'>QRSTUVWXYZABCDEF</motion.h1>*/}
-        </motion.div> 
-    </div>
+          ))}
+        </div>
+      </motion.div>
+    </section>
   )
 }
 

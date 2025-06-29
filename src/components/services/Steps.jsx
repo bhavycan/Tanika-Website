@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import useIsMobile from "../../hooks/useIsMobile";
 
 const Steps = () => {
-const isMobile = useIsMobile()
+  const isMobile = useIsMobile();
 
   const boxConfigs = [
     {
@@ -31,14 +31,20 @@ const isMobile = useIsMobile()
   return (
     <>
       {boxConfigs.map((config, index) => (
-        <motion.div
+        <motion.article
+          role="group"
+          aria-label={`Step ${index + 1}`}
           key={index}
-          className={`z-50 absolute  overflow-hidden rounded-2xl bg-white shadow-2xl ${
+          className={`z-50 absolute overflow-hidden rounded-2xl bg-white shadow-2xl ${
             isMobile ? config.mobile : config.desktop
-          }`}>
-            
-            <img className="w-full h-full object-cover " src={`/images/steps/${index + 1}.png`} alt="" />
-             </motion.div>
+          }`}
+        >
+          <img
+            className="w-full h-full object-cover"
+            src={`/images/steps/${index + 1}.png`}
+            alt={`Step ${index + 1} visual`}
+          />
+        </motion.article>
       ))}
     </>
   );

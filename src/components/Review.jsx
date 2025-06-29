@@ -90,87 +90,90 @@ const reviews = [
   }, [reviews.length, isMobile]);
 
   return (
-    <div
+  <section
       ref={selectionRef}
-      className={`w-full h-[100vh]   py-3 flex items-center justify-center  overflow-hidden`}
+      className={`w-full h-[100vh] py-3 flex items-center justify-center overflow-hidden`}
+      aria-label="Client testimonials"
     >
-      <div className={`background w-full h-full    text-black  `}>
-        <div className="title w-full    leading-[4vw]  px-5  ">
+      <div className={`background w-full h-full text-black`}>
+        <header className="title w-full leading-[4vw] px-5">
           <h1
-            className={` uppercase   border-l-4    border-black font-["Seasons"] overflow-hidden  ${
+            className={`uppercase border-l-4 border-black font-['Seasons'] overflow-hidden ${
               isMobile ? "text-[15vw] h-[13.5vw] pl-2" : "text-[8vw] ml-2 pl-3 h-[6.5vw]"
-            }  `}
+            }`}
           >
             <motion.span
-              initial={{
-                y: 0,
-                rotate: 45,
-                transformOrigin: "left",
-                opacity: 0,
-              }}
+              initial={{ y: 0, rotate: 45, transformOrigin: "left", opacity: 0 }}
               whileInView={{ y: 0, rotate: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className={`inline-block  ${isMobile ? "mt-[7%] h-full" : "mt-[2%]"} `}
+              className={`inline-block ${isMobile ? "mt-[7%] h-full" : "mt-[2%]"}`}
             >
               testimony
             </motion.span>
           </h1>
-          <div className={`sub-title  flex items-center text-right  opacity-80 ${isMobile ? "mt-2" : "ml-2"} `}>
+          <p
+            className={`sub-title flex items-center text-right opacity-80 ${
+              isMobile ? "mt-2" : "ml-2"
+            }`}
+          >
             Listen to our Clients
-          </div>
-        </div>
-        <motion.div ref={constraintsRef} className={`playarea flex  h-[70%] ${isMobile ? "flex-col" : ""}   `}>
-          <div className={`left-reviews  p-6  ${isMobile ? "w-full h-[80%] mt-3 " : "w-[50%] h-full"} `}>
-            {
-              <motion.div className="reviws h-full w-full  flex items-center justify-center relative">
-                {card.map((item, index) => {
-                  return (
-                    <motion.div
-                      initial={{ y: 50, opacity: 0, rotate: 45, scale: 0.5 }}
-                      whileInView={{
-                        y: 0,
-                        opacity: 1,
-                        rotate: index * 5,
-                        scale: 1,
-                        transformOrigin: "center",
-                
-                      }}
-                      transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                      whileHover={{ rotate: 0 }}
-                      whileTap={isMobile ? { zIndex: 100, rotate: 0 } : {}}
-                      drag
-                      dragConstraints={constraintsRef}
-                     key={index}
-                      className={`card w-[70%] h-[90%] rounded-xl bg-zinc-100   shadow-2xl   px-3 py-6  absolute  `}
-                      style={{ zIndex: card.length + index }}
-                    >
-                      <Card value={item} />
-                    </motion.div>
-                  );
-                })}
-              </motion.div>
-            }
-          </div>
-          <div className={`right-reviews   p-6 ${isMobile ? "w-full h-[20%] " : "w-[50%] h-full"} `}>
-            <div className={`text w-full      ${isMobile ? " text-left  mt-10" : "text-right mt-[55%] flex items-center justify-end"}`}>
-              <motion.h2
+          </p>
+        </header>
+
+        <main ref={constraintsRef} className={`playarea flex h-[70%] ${isMobile ? "flex-col" : ""}`}>
+          <section
+            className={`left-reviews p-6 ${isMobile ? "w-full h-[80%] mt-3" : "w-[50%] h-full"}`}
+            aria-label="Client reviews"
+          >
+            <div className="reviews h-full w-full flex items-center justify-center relative">
+              {card.map((item, index) => (
+                <motion.article
+                  key={index}
+                  initial={{ y: 50, opacity: 0, rotate: 45, scale: 0.5 }}
+                  whileInView={{
+                    y: 0,
+                    opacity: 1,
+                    rotate: index * 5,
+                    scale: 1,
+                    transformOrigin: "center",
+                  }}
+                  transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                  whileHover={{ rotate: 0 }}
+                  whileTap={isMobile ? { zIndex: 100, rotate: 0 } : {}}
+                  drag
+                  dragConstraints={constraintsRef}
+                  className={`card w-[70%] h-[90%] rounded-xl bg-zinc-100 shadow-2xl px-3 py-6 absolute`}
+                  style={{ zIndex: card.length + index }}
+                >
+                  <Card value={item} />
+                </motion.article>
+              ))}
+            </div>
+          </section>
+
+          <aside
+            className={`right-reviews p-6 ${isMobile ? "w-full h-[20%]" : "w-[50%] h-full"}`}
+            aria-label="Client feedback description"
+          >
+            <div
+              className={`text w-full ${
+                isMobile ? "text-left mt-10" : "text-right mt-[55%] flex items-center justify-end"
+              }`}
+            >
+              <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 1, ease: "linear" }}
-                className={` leading-5 ${isMobile? "w-[100%] " : "w-[70%]"}`}
+                className={`leading-5 ${isMobile ? "w-[100%]" : "w-[70%]"}`}
               >
-
-              
-
-
                 Our clients’ feedback reflects the dedication and passion we bring to every project. From design to execution, their satisfaction is our greatest reward. These reviews inspire us to continually deliver excellence and build lasting relationships.
-              </motion.h2>
+              </motion.p>
             </div>
-          </div>
-        </motion.div>
+          </aside>
+        </main>
       </div>
-    </div>
+    </section>
   );
 };
 
