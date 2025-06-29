@@ -9,7 +9,7 @@ const Card = ({ value }) => {
     <motion.article
       role="group"
       aria-label={`Review by ${value.name}`}
-      className="w-full h-full flex flex-col items-center"
+      className={`w-full  h-full flex flex-col items-center`}
     >
       <figure
         className={`rounded-full overflow-hidden ${
@@ -36,7 +36,7 @@ const Card = ({ value }) => {
         className={`text-center font-serif ${
           isMobile
             ? "text-[3vw] w-[90%] leading-[4vw] mt-1"
-            : "text-[1.1vw] mt-3 w-[70%]"
+            : "text-[1.1vw] mt-3 w-[70%] leading-[1.2vw] "
         }`}
       >
         {value.review}

@@ -120,9 +120,9 @@ const reviews = [
           </p>
         </header>
 
-        <main ref={constraintsRef} className={`playarea flex h-[70%] ${isMobile ? "flex-col" : ""}`}>
+        <main ref={constraintsRef} className={`playarea flex  ${isMobile ? "flex-col  h-[80%]" : "h-[70%]"}`}>
           <section
-            className={`left-reviews p-6 ${isMobile ? "w-full h-[80%] mt-3" : "w-[50%] h-full"}`}
+            className={`left-reviews p-6 ${isMobile ? "w-full h-[80%] mt-3 " : "w-[50%] h-full"}`}
             aria-label="Client reviews"
           >
             <div className="reviews h-full w-full flex items-center justify-center relative">
@@ -142,7 +142,7 @@ const reviews = [
                   whileTap={isMobile ? { zIndex: 100, rotate: 0 } : {}}
                   drag
                   dragConstraints={constraintsRef}
-                  className={`card w-[70%] h-[90%] rounded-xl bg-zinc-100 shadow-2xl px-3 py-6 absolute`}
+                  className={`card w-[70%] ${isMobile ? "h-[80%]" : "h-[90%]"}  rounded-xl bg-zinc-100 shadow-2xl px-3 py-6 absolute`}
                   style={{ zIndex: card.length + index }}
                 >
                   <Card value={item} />
@@ -152,12 +152,12 @@ const reviews = [
           </section>
 
           <aside
-            className={`right-reviews p-6 ${isMobile ? "w-full h-[20%]" : "w-[50%] h-full"}`}
+            className={`right-reviews p-6 ${isMobile ? "w-full h-[20%]   " : "w-[50%] h-full"}`}
             aria-label="Client feedback description"
           >
             <div
               className={`text w-full ${
-                isMobile ? "text-left mt-10" : "text-right mt-[55%] flex items-center justify-end"
+                isMobile ? "text-left " : "text-right flex mt-[55%] justify-end"
               }`}
             >
               <motion.p
@@ -165,9 +165,9 @@ const reviews = [
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 1, ease: "linear" }}
-                className={`leading-5 font-serif ${isMobile ? "w-[100%]" : "w-[70%]"}`}
+                className={`leading-5 font-serif ${isMobile ? "w-[100%] " : "w-[70%] "}`}
               >
-                Our clients’ feedback reflects the dedication and passion we bring to every project. From design to execution, their satisfaction is our greatest reward. These reviews inspire us to continually deliver excellence and build lasting relationships.
+                Our clients’ feedback reflects the dedication and passion we bring to every project. From design to execution, their satisfaction is our greatest reward. These reviews inspire us to continually deliver excellence and build lasting relationships. Drag it to see review!
               </motion.p>
             </div>
           </aside>

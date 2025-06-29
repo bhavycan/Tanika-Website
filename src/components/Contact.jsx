@@ -96,7 +96,7 @@ const Contact = () => {
                 </h2>
               ))}
             </div>
-            <p className="tag text-[4vw] opacity-80 w-[90%] font-serif leading-5 mt-2 text-left">
+            <p className="tag text-[4vw] opacity-80 w-[90%] font-serif leading-5 mt-[5%] text-left">
               We believe trust is built through complete transparency at every
               step of your project. With our dedicated app, clients can track
               progress, view updates, and stay connected anytime, anywhere.

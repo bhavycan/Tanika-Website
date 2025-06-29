@@ -8,6 +8,7 @@ const FAQs = lazy(()=>import('./components/FAQs/FAQs'))
 import LocomotiveScroll from 'locomotive-scroll';
 import ScrollToTop from './components/ScrollToTop';
 import gsap, { ScrollTrigger } from 'gsap/all'
+import Loading from './components/Loading'
 
 
 
@@ -43,7 +44,7 @@ const locomotiveScroll = new LocomotiveScroll();
    
  <div key="mainPage-loader" className="relative overflow-hidden"> 
     <ScrollToTop />
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loading />}>
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<SitePage />} />
         <Route path="/services" element={<Services />} />
