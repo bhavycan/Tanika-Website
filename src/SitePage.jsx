@@ -24,12 +24,14 @@ const SitePage = () => {
   return (
  <div className="w-full overflow-hidden text-white">
       <Suspense fallback={<Loading />}>
+      
         <Home />
         <About />
         <Offer imagelink={imagelink} />
         <Work />
         <Review />
         <Contact />
+        
       </Suspense>
     </div>
       
