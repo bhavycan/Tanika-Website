@@ -165,7 +165,7 @@ const reviews = [
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 1, ease: "linear" }}
-                className={`leading-5 font-serif ${isMobile ? "w-[100%] " : "w-[70%] "}`}
+                className={`leading-5 font-serif ${isMobile ? "w-[100%] " : "w-[70%] text-[1.3vw] opacity-80 "}`}
               >
                 Our clients’ feedback reflects the dedication and passion we bring to every project. From design to execution, their satisfaction is our greatest reward. These reviews inspire us to continually deliver excellence and build lasting relationships. Drag it to see review!
               </motion.p>

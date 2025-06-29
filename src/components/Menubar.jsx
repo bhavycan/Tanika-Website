@@ -18,7 +18,7 @@ const Menubar = ({ menuOpen, setMenuOpen }) => {
       transition={{ duration: 1, ease: [0.68, -0.6, 0.32, 1.6] }}
       className={`text-black absolute z-50 overflow-hidden top-5 w-full h-full ${
         isMobile ? "pl-0" : "pl-4"
-      } pt-4 rounded-xl ml-5 menu-container bg-red-100`}
+      } pt-4 rounded-xl ml-5 menu-container`}
       role="menu"
       aria-label="Main menu"
     >
