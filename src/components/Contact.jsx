@@ -161,10 +161,10 @@ const Contact = () => {
               aria-hidden="true"
             ></i>
             <a
-              href="tel:+917383838877"
+              href="tel:+917383838457"
               className="text-xl w-full font-semibold opacity-50"
             >
-              +91 7383838877
+              +91 7383838457
             </a>
           </div>
 
@@ -202,9 +202,9 @@ const Contact = () => {
             className="text-xl font-semibold opacity-50"
               target="_blank"
               rel="noopener noreferrer"
-              href="https://www.google.com/maps/place/TANIKA+HOME+DECOR+%26+FURNISHING/@23.114447,72.5401888,16z/data=!4m16!1m9!3m8!1s0x395e83b3fdca6477:0x1a712dca5772d198!2sTANIKA+HOME+DECOR+%26+FURNISHING!8m2!3d23.1142289!4d72.5401798!9m1!1b1!16s%2Fg%2F11q47_h70x!3m5!1s0x395e83b3fdca6477:0x1a712dca5772d198!8m2!3d23.1142289!4d72.5401798!16s%2Fg%2F11q47_h70x?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoASAFQAw%3D%3D"
+              href=""
               >
-              GANESH GLORY, 11, Jagatpur Rd, Gota, Ahmedabad, Gujarat 382470,
+              GANESH GLORY, 55, Amanpur Rd, data, Ahmedabad, Gujarat 380067,
               India
             </a>
           </div>
