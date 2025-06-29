@@ -65,7 +65,7 @@ const Offer = ({ imagelink }) => {
         {name.map((item, index) => (
           <h1
             key={index}
-            className={`${isMobile ? "text-[15vw] h-[13.5vw]" : "text-[8vw] h-[6.5vw]"} uppercase border-r-4 pr-3 border-black font-['Seasons'] flex items-center text-right justify-end overflow-hidden`}
+            className={`${isMobile ? "text-[15vw] h-[13.5vw]" : "text-[8vw] h-[6.5vw]"} uppercase border-r-4 pr-3 border-black font-['font123'] flex items-center text-right justify-end overflow-hidden`}
           >
             <motion.span
               initial={{ y: 50, rotate: 45, transformOrigin: "right", opacity: 0 }}

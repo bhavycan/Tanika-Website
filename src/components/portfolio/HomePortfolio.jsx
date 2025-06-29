@@ -31,7 +31,7 @@ const HomePortfolio = () => {
                   initial={{ x: 10, y: -10, opacity: 0 }}
                   whileInView={{ x: -5, y: 5, opacity: 0.1 }}
                   transition={{ duration: 1 }}
-                  className={`w-full absolute top-7 left-1 uppercase flex items-center ${isMobile ? "text-[22vw] h-[30%]" : "text-[10vw] h-[30%] justify-end"}`}
+                  className={`w-full absolute top-7  left-1 uppercase flex items-center ${isMobile ? "text-[22vw] h-[30%]" : "text-[10vw] h-[30%] justify-end"}`}
                 >
                   {item}
                 </motion.h1>

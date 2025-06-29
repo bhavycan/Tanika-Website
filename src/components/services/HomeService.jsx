@@ -26,7 +26,7 @@ const HomeService = () => {
       >
         <h1
           id="home-service-heading"
-          className='w-fit font-["Seasons"] text-[#b71437]'
+          className='w-fit font-["font123"] text-[#b71437]'
         >
           {slicer("Service").map((char, index) => (
             <motion.span

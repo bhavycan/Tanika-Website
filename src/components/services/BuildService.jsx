@@ -62,14 +62,14 @@ const BuildService = () => {
         <h1
           className={`w-full ${
             isMobile ? "h-[30%] text-[30vw]" : "h-[30%] text-[10vw]"
-          } flex items-center font-['Seasons']`}
+          } flex items-center font-['font123']`}
         >
           Brick
         </h1>
         <h2
           className={`w-full ${
             isMobile ? "h-[2%] text-[15vw]" : "h-[2%] text-[5vw]"
-          } text-gray-500 font-bold flex items-center justify-center font-['Brittany']`}
+          } text-gray-500 font-bold flex items-center justify-center font-['font456']`}
         >
           By
         </h2>
@@ -78,7 +78,7 @@ const BuildService = () => {
             isMobile
               ? "h-[30%] text-[30vw]"
               : "h-[30%] text-[10vw] justify-end"
-          } flex items-center font-['Seasons']`}
+          } flex items-center font-['font123']`}
         >
           Brick
         </h1>
@@ -101,7 +101,7 @@ const BuildService = () => {
           className="w-full absolute top-[80%] h-[10%]"
           aria-label="Drag instruction"
         >
-          <p className="w-full h-full flex items-center justify-center text-[10vw] font-['Seasons']">
+          <p className="w-full h-full flex items-center justify-center text-[10vw] font-['font123']">
             Drag It
           </p>
         </aside>

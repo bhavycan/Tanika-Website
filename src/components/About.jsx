@@ -42,7 +42,7 @@ const About = () => {
                 initial={{ y: 0, rotate: 45, transformOrigin: "left", opacity: 0 }}
                 whileInView={{ y: 0, rotate: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                className='inline-block font-["Seasons"]'
+                className='inline-block font-["font123"]'
               >
                 {item}
               </motion.span>

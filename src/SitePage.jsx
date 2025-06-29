@@ -7,6 +7,7 @@ const Offer = lazy(()=> import('./components/Offer'))
 const Contact = lazy(()=> import('./components/Contact'))
 const About = lazy(()=> import('./components/About'))
 import { Routes, Route, Router } from 'react-router-dom';
+import Loading from './components/Loading'
 
 
 
@@ -22,7 +23,7 @@ const SitePage = () => {
     
   return (
  <div className="w-full overflow-hidden text-white">
-      <Suspense fallback={<div className="py-20 text-center text-black text-xl">Loading site...</div>}>
+      <Suspense fallback={<Loading />}>
         <Home />
         <About />
         <Offer imagelink={imagelink} />

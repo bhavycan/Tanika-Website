@@ -89,7 +89,7 @@ const Contact = () => {
                     }}
                     whileInView={{ y: 0, rotate: 0, opacity: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.2 }}
-                    className='inline-block font-["Seasons"]'
+                    className='inline-block font-["font123"]'
                   >
                     {item}
                   </motion.span>
@@ -132,7 +132,7 @@ const Contact = () => {
                 }}
                 whileInView={{ y: 0, rotate: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                className='inline-block font-["Seasons"] mt-3'
+                className='inline-block font-["font123"] mt-3'
               >
                 {item}
               </motion.span>

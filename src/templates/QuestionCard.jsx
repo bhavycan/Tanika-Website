@@ -29,7 +29,7 @@ const QuestionCard = ({ card }) => {
       >
         {/* Front Side */}
         <section
-          className="absolute w-full h-full backface-hidden shadow-2xl px-2 py-2 text-center flex items-center justify-center rounded-lg overflow-hidden text-white text-xl font-['Seasons'] font-bold"
+          className="absolute w-full h-full backface-hidden shadow-2xl px-2 py-2 text-center flex items-center justify-center rounded-lg overflow-hidden text-white text-xl font-['font123'] font-bold"
           style={{ backfaceVisibility: 'hidden' }}
         >
           <figure className="image-container absolute w-full -z-10 h-full overflow-hidden">

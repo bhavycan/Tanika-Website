@@ -84,7 +84,7 @@ const Menubar = ({ menuOpen, setMenuOpen }) => {
                   {slicer(item).map((char, index) => (
                     <div
                       key={index}
-                      className="font-['Seasons'] flex items-center justify-start overflow-hidden"
+                      className="font-['font123'] flex items-center justify-start overflow-hidden"
                     >
                       <motion.span
                         initial={{ x: -100, opacity: 0, fontSize: "5vw" }}

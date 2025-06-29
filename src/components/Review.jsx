@@ -98,7 +98,7 @@ const reviews = [
       <div className={`background w-full h-full text-black`}>
         <header className="title w-full leading-[4vw] px-5">
           <h1
-            className={`uppercase border-l-4 border-black font-['Seasons'] overflow-hidden ${
+            className={`uppercase border-l-4 border-black font-['font123'] overflow-hidden ${
               isMobile ? "text-[15vw] h-[13.5vw] pl-2" : "text-[8vw] ml-2 pl-3 h-[6.5vw]"
             }`}
           >

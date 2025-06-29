@@ -109,13 +109,13 @@ const Home = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
-              className={`${isMobile ? "text-[5vw] tracking-tighter ml-6  font-serif" : "text-[7vw] font-['Brittany']"}`}
+              className={`${isMobile ? "text-[5vw] tracking-tighter ml-6  font-serif" : "text-[7vw] font-['font456']"}`}
             >
               We make
             </motion.h1>
 
             <motion.div
-              className={`${isMobile ? "w-[100%] h-[20vh] flex mt-3 items-center text-white justify-center" : "text-[9vw] h-32 mb-6 overflow-hidden"} tracking-tight relative font-["Seasons"]  text-[#2e2319]`}
+              className={`${isMobile ? "w-[100%] h-[20vh] flex mt-3 items-center text-white justify-center" : "text-[9vw] h-32 mb-6 overflow-hidden"} tracking-tight relative font-["font123"]  text-[#2e2319]`}
             >
               {isMobile ? (
                 <div className="w-full h-full flex items-center justify-center">

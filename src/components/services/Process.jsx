@@ -44,7 +44,7 @@ const Process = () => {
       <header className="w-full h-full flex items-center justify-center">
         <h2
           id="process-title"
-          className='text-[6vw] z-40 p-3 font-["Seasons"] font-semibold text-black'
+          className='text-[6vw] z-40 p-3 font-["font123"] font-semibold text-black'
         >
           Your dream home in 5 steps
         </h2>

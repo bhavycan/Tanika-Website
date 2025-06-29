@@ -100,7 +100,7 @@ const Work = () => {
         )}
 
         <div className={`container w-full relative h-full flex flex-col items-center ${isMobile ? 'justify-center' : ''}`}>
-          <h1 className="work font-['Seasons'] text-[28vw] h-fit overflow-hidden">
+          <h1 className="work font-['font123'] text-[28vw] h-fit overflow-hidden">
             <motion.span
               initial={{ y: -100, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -151,7 +151,7 @@ const Work = () => {
             <h1 className={`${isMobile ? 'text-[4vw]' : 'text-[2vw]'} font-serif opacity-80`}>Check Out Our</h1>
             <Link to={'/portfolio'}>
               <div className="w-full flex items-center justify-center">
-                <h1 className={`${isMobile ? 'text-[9vw]' : 'text-[4vw] mt-3'} font-['Seasons']`}>
+                <h1 className={`${isMobile ? 'text-[9vw]' : 'text-[4vw] mt-3'} font-['font123']`}>
                   Portfolio
                 </h1>
                 <motion.div

@@ -67,7 +67,7 @@ const HomePartners = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className={`flex items-center justify-center text-white font-['Brittany'] rounded-md shadow-lg ${
+          className={`flex items-center justify-center text-white font-['font456'] rounded-md shadow-lg ${
             isMobile ? 'w-[80%] h-[10%] text-[9vw] bg-[#F58220]' : 'w-[30%] h-[20%] text-[5vw]'
           }`}
         >
@@ -78,7 +78,7 @@ const HomePartners = () => {
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.2, ease: easeIn }}
-          className={`flex items-center justify-center uppercase font-['Seasons'] ${
+          className={`flex items-center justify-center uppercase font-['font123'] ${
             isMobile ? 'w-full h-[20%] mt-[55%] text-[18vw]' : 'w-full h-[40%] text-[18vw]'
           }`}
         >

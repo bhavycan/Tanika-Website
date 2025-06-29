@@ -39,7 +39,7 @@ const BuildCard = ({ card, constraints }) => {
         />
       </figure>
       <figcaption
-        className={`text-tag flex items-center justify-center font-['Seasons'] h-[15%] py-3 ${
+        className={`text-tag flex items-center justify-center font-['font123'] h-[15%] py-3 ${
           isMobile ? '' : 'text-[2vw]'
         }`}
       >
