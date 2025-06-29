@@ -96,7 +96,7 @@ const Contact = () => {
                 </h2>
               ))}
             </div>
-            <p className="tag text-[3.5vw] opacity-80 w-[90%] leading-5 mt-2 text-left">
+            <p className="tag text-[4vw] opacity-80 w-[90%] font-serif leading-5 mt-2 text-left">
               We believe trust is built through complete transparency at every
               step of your project. With our dedicated app, clients can track
               progress, view updates, and stay connected anytime, anywhere.
@@ -252,6 +252,9 @@ const Contact = () => {
               });
             }, 500);
           }}
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
           whileTap={{ scale: 0.5 }}
           className={`w-[100%] flex items-center justify-center flex-col ${
             isMobile ? "h-[25%]" : "h-[25%]"

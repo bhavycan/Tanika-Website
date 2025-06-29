@@ -33,7 +33,7 @@ const Card = ({ value }) => {
       </h3>
 
       <p
-        className={`text-center ${
+        className={`text-center font-serif ${
           isMobile
             ? "text-[3vw] w-[90%] leading-[4vw] mt-1"
             : "text-[1.1vw] mt-3 w-[70%]"

@@ -45,7 +45,7 @@ const QuestionCard = ({ card }) => {
 
         {/* Back Side */}
         <section
-          className="absolute w-full h-full shadow-2xl px-2 py-2 rounded-lg text-center flex items-center justify-center text-md overflow-hidden"
+          className="absolute w-full h-full shadow-2xl px-2 py-2 rounded-lg text-center flex items-center justify-center text-md font-serif overflow-hidden"
           style={{
             transform: 'rotateY(180deg)',
             backfaceVisibility: 'hidden',
