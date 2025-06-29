@@ -47,7 +47,7 @@ const Menubar = ({ menuOpen, setMenuOpen }) => {
             color: "#A1045A",
             transition: { duration: 0.5 },
           }}
-          className="ml-10 absolute right-0 top-5 mr-[2vw] w-12 h-12 shadow-lg flex items-center justify-center rounded-full cursor-pointer select-none"
+          className={`ml-10 absolute ${isMobile ? "right-5" : "right-5"}   w-12 h-12 shadow-lg flex items-center justify-center rounded-full cursor-pointer select-none`}
           aria-label="Close menu"
         >
           <i
