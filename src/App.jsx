@@ -41,7 +41,7 @@ const locomotiveScroll = new LocomotiveScroll();
   }, []);
   return (
    
- <div key="mainPage-loader" className="relative overflow-hidden"> {/* ✅ Ensures Menu can overlay */}
+ <div key="mainPage-loader" className="relative overflow-hidden"> 
     <ScrollToTop />
     <Suspense fallback={<div>Loading...</div>}>
       <Routes location={location} key={location.pathname}>

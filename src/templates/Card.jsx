@@ -17,7 +17,7 @@ console.log(value)
       <h2 className={`name mt-2  font-semibold opacity-70  ${isMobile ? "text-[6vw]" : "text-[1.5vw]"} `}>
         {value.name}
       </h2>
-      <div className={`review-text   text-center ${isMobile ? "text-[3.5vw] w-[90%] leading-[4vw] mt-1" : "text-[1.1vw] mt-3 w-[70%]"} `}>{value.review}</div>
+      <div className={`review-text   text-center ${isMobile ? "text-[3vw] w-[90%] leading-[4vw] mt-1" : "text-[1.1vw] mt-3 w-[70%]"} `}>{value.review}</div>
     </motion.div>
   );
 };

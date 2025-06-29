@@ -138,7 +138,7 @@ isMobile && (tl.to('.workvideo',{
        initial={{ y: 20, opacity : 0 }}
        whileInView={{ y: 0, opacity : 60 }}
        transition={{ duration: 1, delay:  .5 }}
-      className={`text-below w-[80%] ${isMobile ? "text-center  text-sm leading-4 " : " text-center text-xl leading-6"}    opacity-60   font-serif text-black`}><p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur voluptatem deleniti, sunt nostrum laboriosam nulla reprehenderit ut provident magnam similique aperiam expedita veniam aliquid illo ratione atque saepe! Nemo dolor dicta cum optio corrupti minus?</p></motion.div>
+      className={`text-below w-[80%] ${isMobile ? "text-center  text-sm leading-4 " : " text-center text-xl leading-6"}    opacity-60   font-serif text-black`}><p >We’ve proudly completed 50+ projects in just one year, spanning residential, commercial, and industrial spaces. Each project reflects our commitment to quality, creativity, and timely execution. This milestone stands as proof of the trust our clients place in us and the efficiency of our expert team.</p></motion.div>
     </div>
 
     <div className={`${isMobile ? "flex-col h-[75%]  w-[100%]" : "w-[50%]  h-full"} site-name  flex  items-center   `}>

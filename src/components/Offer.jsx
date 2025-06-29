@@ -108,7 +108,9 @@ const Offer = ({imagelink}) => {
 
         {isMobile && ( 
           <div className='w-full flex justify-end items-end pr-3 h-[10%] mt-[15%]'>
-              <p className='w-[75%] h-fit text-right  font-serif leading-5 opacity-80'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, autem tenetur atque quos harum, repellendus porro impedit accusantium.</p>
+              <p className='w-[75%] h-fit text-right  font-serif leading-5 opacity-80'>
+                We provide tailored solutions that bring your vision to life, combining design expertise with flawless execution. Our team ensures every detail aligns with your style, needs, and lifestyle.
+              </p>
           </div>
         )}
       

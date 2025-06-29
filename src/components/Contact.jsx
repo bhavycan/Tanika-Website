@@ -2,7 +2,7 @@ import gsap, { ScrollTrigger } from "gsap/all";
 import { motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 import useIsMobile from "../hooks/useIsMobile";
-import NavBar from "../templates/NavBar";
+
 
 const Contact = () => {
   const mobileName = ["Contact", "Us"];
@@ -105,9 +105,8 @@ const Contact = () => {
               })}
             </div>
 
-            <div className="tag w-[90%] leading-5 mt-2 text-left">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab culpa
-              perferendis consequuntur accusantium, nostrum natus.
+            <div className={`tag text-[3.5vw] opacity-80 w-[90%] leading-5 mt-2 text-left`}>
+             We believe trust is built through complete transparency at every step of your project. With our dedicated app, clients can track progress, view updates, and stay connected anytime, anywhere.
             </div>
           </div>
         ) : (
@@ -239,6 +238,20 @@ const Contact = () => {
               ></i>
             </a>
           </div>
+
+      <motion.div onClick={()=>{setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }, 500); }} 
+  whileTap={{scale: .5}}
+  className={`w-[100%] flex items-center justify-center flex-col ${isMobile ? " h-[25%]" : " h-[25%]"} `}>
+    <div className={`circle ${isMobile ? "w-[10vw] h-[10vw]" : "w-[4vw] h-[4vw]"}  bg-black flex items-center justify-center text-white  rounded-full`}>
+      <i className={`ri-arrow-up-line ${isMobile ? "text-[3vw] " : "text-[2vw]"}   text-[2vw]`}></i>
+    </div>
+      <span className={`inline-block  ${isMobile ? "text-[3vw] mt-[2%] " : "text-[1vw] mt-[1%]"}  font-semibold`}>ScrollToTop</span>
+  </motion.div>
         </motion.div>
       </div>
 

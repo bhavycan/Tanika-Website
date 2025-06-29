@@ -61,7 +61,7 @@ const About = () => {
           transition={{ duration: 1, delay: 0.5 }}
           className={`mt-5 font-["Arvo",serif] ${isMobile ? 'text-[4vw] ' : ''}`}
         >
-          We are a passionate team of designers and craftsmen dedicated to transforming living spaces with personalized style and functionality. Our mission is to create thoughtfully designed interiors that reflect our clients' tastes, needs, and personalities. With a focus on quality, innovation, and attention to detail, we provide custom furniture and design solutions for homes of all sizes. We believe that every space has the potential to inspire comfort and beauty, and we strive to bring that vision to life. Through collaboration and creativity, we make home design a seamless and enjoyable experience.
+          Tanika Associates is a leading design and build firm in Ahmedabad, specializing in architecture, interior design, and turnkey project execution. We have successfully completed over 50 residential, commercial, and industrial projects in just one year. Our services include electrification, civil work, custom furniture, false ceilings, decorative painting, and design visualization. Every project combines functionality with aesthetic appeal, tailored to meet each client’s unique vision. Known for our innovation, transparency, and timely delivery, Tanika Associates is a trusted partner from concept to completion.
         </motion.p>
       </div>
     </div>

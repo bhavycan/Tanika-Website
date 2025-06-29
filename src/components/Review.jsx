@@ -6,43 +6,45 @@ import { image } from "motion/react-client";
 import useIsMobile from "../hooks/useIsMobile";
 
 const Review = () => {
-  const reviews = [
-    {
-      name: "bobob",
-      image:
-        "https://images.unsplash.com/photo-1609770653328-a4d1dd377970?q=80&w=1827&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      review:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor, provident dignissimos. Sit nobis ab excepturi maiores illum soluta earum facilis.",
-    },
-    {
-      name: "lololo",
-      image:
-        "https://images.unsplash.com/photo-1558377235-76f53857000b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW5kaWFuJTIwd29tYW58ZW58MHx8MHx8fDA%3D",
-      review:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor, provident dignissimos. Sit nobis ab excepturi maiores illum soluta earum facilis.",
-    },
-    {
-      name: "xoxoxo",
-      image:
-        "https://images.unsplash.com/photo-1626193082710-a16206f819f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGluZGlhbiUyMHdvbWFufGVufDB8fDB8fHww",
-      review:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor, provident dignissimos. Sit nobis ab excepturi maiores illum soluta earum facilis.",
-    },
-    {
-      name: "brabra",
-      image:
-        "https://images.unsplash.com/photo-1543084951-1650d1468e2d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      review:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor, provident dignissimos. Sit nobis ab excepturi maiores illum soluta earum facilis.",
-    },
-    {
-      name: "vivava",
-      image:
-        "https://plus.unsplash.com/premium_photo-1691030254390-aa56b22e6a45?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      review:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor, provident dignissimos. Sit nobis ab excepturi maiores illum soluta earum facilis.",
-    },
-  ];
+const reviews = [
+  {
+    name: "Rahul Patel",
+    image:
+      "https://images.unsplash.com/photo-1609770653328-a4d1dd377970?q=80&w=1827&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    review:
+      "Tanika Associates exceeded our expectations with their professional approach and creative solutions. They understood our vision perfectly and turned it into reality. The entire process was smooth and well-coordinated.",
+  },
+  {
+    name: "Nirali Joshi",
+    image:
+      "https://images.unsplash.com/photo-1558377235-76f53857000b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW5kaWFuJTIwd29tYW58ZW58MHx8MHx8fDA%3D",
+    review:
+      "We were highly impressed by the quality of work and attention to detail. The team was responsive to all our inputs and adapted accordingly. The final outcome was elegant, functional, and exactly what we had hoped for.",
+  },
+  {
+    name: "Hetal Shah",
+    image:
+      "https://images.unsplash.com/photo-1626193082710-a16206f819f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGluZGlhbiUyMHdvbWFufGVufDB8fDB8fHww",
+    review:
+      "From concept to completion, the experience with Tanika Associates was seamless. Their design ideas were fresh and practical, and the execution was flawless. I’d gladly recommend them to anyone seeking quality interior work.",
+  },
+  {
+    name: "Kavit Patel",
+    image:
+      "https://images.unsplash.com/photo-1543084951-1650d1468e2d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    review:
+      "Tanika Associates handled our project with great professionalism and care. They delivered every stage of work on time, with excellent finish and functionality. The transformation they brought to our space was outstanding.",
+  },
+  {
+    name: "Meet Gupta",
+    image:
+      "https://plus.unsplash.com/premium_photo-1691030254390-aa56b22e6a45?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    review:
+      "Working with Tanika Associates was a truly stress-free experience. They maintained clear communication throughout and showed deep understanding of our needs. The final result was beyond what we imagined, both in design and quality.",
+  },
+];
+
+
 
   const [card, setcard] = useState([]);
   const constraintsRef = useRef(null);
@@ -162,11 +164,7 @@ const Review = () => {
               
 
 
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Architecto iste, incidunt rerum facilis nobis labore distinctio
-                reprehenderit accusantium delectus ex cupiditate vitae voluptas
-                dolorem ratione optio praesentium corrupti. Libero, sunt! Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. 
+                Our clients’ feedback reflects the dedication and passion we bring to every project. From design to execution, their satisfaction is our greatest reward. These reviews inspire us to continually deliver excellence and build lasting relationships.
               </motion.h2>
             </div>
           </div>
