@@ -115,7 +115,7 @@ const Home = () => {
             </motion.h1>
 
             <motion.div
-              className={`${isMobile ? "w-[100%] h-[20vh] flex mt-3 items-center text-white justify-center" : "text-[9vw] h-32 mb-6 overflow-hidden"} tracking-tight relative font-["font123"]  text-[#2e2319]`}
+              className={`${isMobile ? "w-[100%] h-[20vh] flex mt-3 items-center text-white justify-center" : "text-[9vw] h-32 mb-6 "} tracking-tight relative font-["font123"]  text-[#2e2319]`}
             >
               {isMobile ? (
                 <div className="w-full h-full flex items-center justify-center">
