@@ -63,7 +63,7 @@ const Home = () => {
   return (
     <motion.div
       key="mainPage-loader"
-      className="w-full min-h-[100vh] overflow-hidden"
+      className="w-full min-h-[100vh]  overflow-hidden"
     >
       <main
         data-scroll-container

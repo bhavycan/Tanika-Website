@@ -10,7 +10,7 @@ const About = () => {
 
   return (
     <section 
-      className={`w-full text-black overflow-hidden pointer-events: none px-4 md:px-8 ${
+      className={`w-full text-black  overflow-hidden pointer-events: none px-4 md:px-8 ${
         isMobile ? 'flex flex-col gap-6 py-0 -mt-[40%]' : ' py-6 flex gap-[2%] '
       }`}
     >
