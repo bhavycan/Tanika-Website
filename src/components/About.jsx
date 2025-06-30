@@ -32,7 +32,7 @@ const About = () => {
           {(isMobile ? mobileName : name).map((item, index) => (
             <h1 
               key={index}
-              className={`uppercase border-l-4 pl-3 pt-2 border-black overflow-hidden ${
+              className={`uppercase border-l-4 pl-3 border-black overflow-hidden ${
                 isMobile 
                   ? 'text-[15vw] h-[13.5vw]' 
                   : 'text-[8vw] h-[6.5vw]'
