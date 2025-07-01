@@ -5,6 +5,7 @@ import Menubar from "./Menubar";
 import TypingHeading from "../templates/TypingHeading";
 import LocomotiveScroll from 'locomotive-scroll';
 import useIsMobile from "../hooks/useIsMobile";
+import Loading from "./Loading";
 
 const Home = () => {
   const isMobile = useIsMobile();
@@ -64,7 +65,14 @@ const Home = () => {
     <motion.div
       key="mainPage-loader"
       className="w-full min-h-[100vh]  overflow-hidden"
+      initial={{opacity : 0}}
+      animate={{opacity: 1}}
+      transition={{duration: 0.5}}
     >
+
+     
+
+
       <main
         data-scroll-container
         ref={scrollRef}
