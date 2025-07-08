@@ -8,7 +8,7 @@ const isMobile = useIsMobile()
 
 
   return (
-    <div className={` ${isMobile ? "w-[90%]" : "w-[70%]"} min-h-[100vh] bg-white`}>
+    <div className={` ${isMobile ? "w-[90%]" : "w-[80%]"} min-h-[100vh] bg-white`}>
         <StepPart />
     </div>
   )

@@ -67,7 +67,7 @@ const HomePartners = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className={`flex items-center justify-center text-white font-['font456'] rounded-md shadow-lg ${
+          className={`flex items-center justify-center text-white font-['font456'] rounded-md  ${
             isMobile ? 'w-[80%] h-[10%] text-[9vw] bg-[#F58220]' : 'w-[30%] h-[20%] text-[5vw]'
           }`}
         >

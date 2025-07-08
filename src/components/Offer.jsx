@@ -81,7 +81,7 @@ const Offer = ({ imagelink }) => {
       </header>
 
       <article
-        className={`marquediv ${isMobile ? "mt-20 mb-[2%]" : "mt-20"} text-black`}
+        className={`marquediv ${isMobile ? "mt-20 mb-[10%] h-[30%]" : "mt-20"}  text-black`}
       >
         {services.map((service, index) => (
           <ServiceRow
@@ -97,8 +97,8 @@ const Offer = ({ imagelink }) => {
       </article>
 
       {isMobile && (
-        <footer className="w-full flex justify-end items-end pr-3 h-[10%] mt-[35%]">
-          <p className=" h-fit text-right font-serif leading-5 opacity-80">
+        <footer className="w-full flex justify-end   items-end pr-3  ">
+          <p className=" h-full w-full flex items-end text-right font-serif leading-5 opacity-80">
             We provide tailored solutions that bring your vision to life, combining design expertise with flawless execution. Our team ensures every detail aligns with your style, needs, and lifestyle.
           </p>
         </footer>

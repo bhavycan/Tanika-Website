@@ -38,7 +38,7 @@ const SitePage = () => {
   
  <div className="w-full overflow-hidden text-white">
 <AnimatePresence mode='wait'>
-  {loading ?<Loading key='loader' />  : <Suspense fallback={null}>
+  {loading ?<Loading key='loader' />  : <Suspense fallback={<Loading />}>
      
         <Home />
         <About />

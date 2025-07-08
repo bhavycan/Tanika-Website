@@ -16,7 +16,7 @@ const HomePortfolio = () => {
             {title.map((item, index) => (
               <div
                 key={index}
-                className={`w-full ${isMobile ? "h-[30%]" : "h-[9vw]"} flex items-center justify-center relative`}
+                className={`w-full ${isMobile ? "h-[32%]" : "h-[9vw]"} flex items-center justify-center relative`}
               >
                 <motion.h1
                   initial={{ x: -5, y: 5, opacity: 0 }}

@@ -40,7 +40,7 @@ const StepPart = () => {
   ];
 
   return (
-    <section className={`main w-full mb-[20vh] flex flex-col`}>
+    <section className={`main w-full  mb-[20vh] flex flex-col`}>
       {flats.map((item, index) => (
         <motion.article
           key={index}
@@ -103,10 +103,12 @@ const StepPart = () => {
               animate={{
                 opacity: 1,
                 pointerEvents: "auto",
+                
               }}
+              transition={{duration : .5, delay : .1}}
               className="z-20 card w-[25vw] absolute rounded-md overflow-hidden shadow-2xl h-[35vw] left-[53%] bg-red-800"
             >
-              <img src={item.image} alt={`${item.name} building`} className="w-full h-full object-cover" />
+              <img loading="lazy" src={item.image} alt={`${item.name} building`} className="w-full h-full object-cover" />
             </motion.div>
           )}
         </motion.article>
