@@ -53,7 +53,7 @@ const HomePortfolio = () => {
               transition={{ duration: 1, delay: 1 }}
               className={`${isMobile ? "text-[3.5vw] w-[90%] h-full" : "text-[1.1vw] w-[90%]"}`}
             >
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla amet ipsam quia at sequi facere nemo laudantium consequatur, doloribus quidem voluptatum a repudiandae, veritatis, et sit atque tempora perspiciatis? Labore modi asp
+             Every space tells a story. Designed with precision, shaped by experience, and brought to life with passion. From concept to creation, we deliver interiors that reflect personality, purpose, and perfection.
             </motion.p>
           </div>
         </article>
