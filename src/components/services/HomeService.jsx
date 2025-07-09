@@ -81,10 +81,7 @@ const HomeService = () => {
             isMobile ? 'text-[3.5vw]' : 'text-[1vw]'
           } -mt-[6.5%] leading-5 font-serif`}
         >
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum eos
-          quasi recusandae non natus et corrupti quis nemo ab inventore eius, a
-          optio soluta minima sint libero dignissimos. Sunt voluptatibus
-          repudiandae rerum earum deleniti nemo, ullam nam est at numquam?
+         We offer bespoke interior solutions tailored to reflect refined taste and timeless elegance spanning concept design, premium material curation, 3D visualization, and flawless turnkey execution. Every space we craft is a blend of sophistication, comfort, and artisanal detail,delivered with precision and perfection.
         </motion.p>
       </header>
     </section>

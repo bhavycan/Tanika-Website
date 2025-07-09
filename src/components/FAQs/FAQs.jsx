@@ -61,7 +61,7 @@ const faqs = [
             initial={{x : -50 , opacity : 0}}
             whileInView={{ x : 0, opacity : 1}}
             transition={{duration : 1 ,ease : "easeInOut"}}
-            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quae explicabo delectus minima veniam quam maiores quis voluptatem! Laboriosam, vero! Lorem ipsum dolor </motion.p></motion.div>
+            >Find quick, clear responses to the most common questions about our services, process, materials, and execution from concept to completion. </motion.p></motion.div>
         </motion.div>
 
         <motion.div 

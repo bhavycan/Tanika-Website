@@ -6,47 +6,47 @@ const SubPartners = () => {
   const cardinfo = [
     {
       name: "Hardware",
-      info: "Lorem ipsum dolor sit amet consectetur adipisicing eli amet consectetur adipisicing eli",
+      info: "EBCO hardware ensures sturdy, seamless operation in our cabinets and storage solutions.",
       image: ["/images/partners_images/ebco.webp"],
     },
     {
       name: "Hardware",
-      info: "Lorem ipsum dolor sit amet consectetur adipisicing eli amet consectetur adipisicing eli",
+      info: "We trust Hettich for smart, smooth, and high-quality furniture fittings.",
       image: ["/images/partners_images/hettich.png"],
     },
     {
       name: "Hardware",
-      info: "Lorem ipsum dolor sit amet consectetur adipisicing eli amet consectetur adipisicing eli",
+      info: "Olive fittings elevate our kitchens and wardrobes with durable and stylish hardware.",
       image: ["/images/partners_images/olive-logo.webp"],
     },
     {
       name: "Hardware",
-      info: "Lorem ipsum dolor sit amet consectetur adipisicing eli amet consectetur adipisicing eli",
+      info: "Vita hardware adds strength and modern aesthetics to our doors and windows.",
       image: ["/images/partners_images/vita.png"],
     },
     {
       name: "Electric",
-      info: "Lorem ipsum dolor sit amet consectetur adipisicing eli amet consectetur adipisicing eli",
+      info: "Our projects include RR Kabel wiring, known for innovation and high safety standards.",
       image: ["/images/partners_images/rr.png"],
     },
     {
       name: "Electric",
-      info: "Lorem ipsum dolor sit amet consectetur adipisicing eli amet consectetur adipisicing eli",
+      info: "We use Finolex wiring for its proven safety, durability, and trusted quality.",
       image: ["/images/partners_images/finolex.png"],
     },
     {
       name: "Electric",
-      info: "Lorem ipsum dolor sit amet consectetur adipisicing eli amet consectetur adipisicing eli",
+      info: "We install Elleys’ modular switches known for sleek design and reliable performance.",
       image: ["/images/partners_images/elleys_Logo.png"],
     },
     {
       name: "Plywood",
-      info: "Lorem ipsum dolor sit amet consectetur adipisicing eli amet consectetur adipisicing eli",
+      info: "Our woodwork features Royale Touché plywood for its premium look and durable, waterproof quality.",
       image: ["/images/partners_images/royal_touch.jpg"],
     },
     {
       name: "Paint",
-      info: "Lorem ipsum dolor sit amet consectetur adipisicing eli amet consectetur adipisicing eli",
+      info: "We use Asian Paints Royale for its smooth, luxurious finish and long-lasting elegance. ",
       image: ["/images/partners_images/asian_paints.webp"],
     },
   ];

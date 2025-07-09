@@ -94,7 +94,7 @@ const Home = () => {
         <header className="navbar relative w-full mt-5 px-4 md:px-10 z-10 flex items-center justify-between" style={{ height: isMobile ? "80px" : "128px" }}>
           <div className={`name text-white font-semibold uppercase leading-tight ${isMobile ? "text-sm" : "text-[1.5vw]"}`}>
             <h1 className="w-fit border-b-2 py-0.5 border-white">tanika</h1>
-            <h1 className="border-b-2 border-white py-0.5">associate</h1>
+            <h1 className="border-b-2 border-white py-0.5">associates</h1>
           </div>
 
           <div className={`logo absolute ${isMobile ? "left-1/2 -translate-x-1/2 top-12 w-24 h-24" : "left-[45%] top-10 w-32 h-32"}`}>

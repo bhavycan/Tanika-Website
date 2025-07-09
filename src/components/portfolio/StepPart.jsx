@@ -11,21 +11,21 @@ const StepPart = () => {
     name: "Avani Prastha",
     location: "Sargasan Gandhinagar",
     year: 2024,
-    image: "https://images.unsplash.com/photo-1572120360610-d971b9b78830",
+    image: "https://imgs.search.brave.com/5uyKtOdoTjL0x_sOsq_diewaUbonjCgxic5sw5-WKms/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/dml2YWFucmVhbHR5/LmNvbS9pbWFnZXMv/YWJvdXQtaG9tZS53/ZWJw",
     description: "Avani Prastha is a luxurious 3BHK turnkey project (1210–1220 sq ft) where we delivered complete interior solutions with elegant and functional design."
   },
   {
     name: "Ganesh Pride",
     location: "Vaishnodevi Circle",
     year: 2024,
-    image: "https://images.unsplash.com/photo-1599423300746-b62533397364",
-    description : "Ganesh Pride is a 3BHK turnkey project (1530 sq ft) where we executed full interior work with a focus on modern, spacious, and practical design."
+    image: "https://ganeshhousing.com/assets/main/images/malabar_retreat.jpg",
+    description : "Ganesh Pride is a 3BHK turnkey project (786 sq ft) where we executed full interior work with a focus on modern, spacious, and practical design."
   },
   {
     name: "Infinity Luxuria",
     location: "Science City",
     year: 2024,
-    image: "https://images.unsplash.com/photo-1501183638710-841dd1904471",
+    image: "https://ganeshhousing.com/assets/main/images/projects/sundarvan-epitome.jpg",
     description : "Infinity Luxuria is a premium 3BHK turnkey project (1465 sq ft) in Science City where we crafted elegant interiors that reflect spacious luxury and high-end finishes."
   },
   {
@@ -54,20 +54,20 @@ const StepPart = () => {
     location: "Gota",
     year: 2025,
     image: "https://images.unsplash.com/photo-1501183638710-841dd1904471",
-    description : "Aristo Alayam is a spacious 3BHK turnkey project (2691 sq ft) in Gota where we delivered high-end interior solutions combining luxury and functionality."
+    description : "Aristo Alayam is a spacious 3BHK turnkey project (1191 sq ft) in Gota where we delivered high-end interior solutions combining luxury and functionality."
   },
   {
     name: "Atharv Landmark",
     location: "Chenpur",
     year: 2024,
-    image: "https://images.unsplash.com/photo-1565182999561-18d7dc61bb0b",
+    image: "https://ganeshhousing.com/assets/main/images/projects/satva.jpg",
     description : "Atharv Landmark is a 2BHK turnkey project (1224 sq ft) in Chenpur where we provided stylish and efficient interior design solutions tailored for comfortable living."
   },
   {
     name: "Malabar Exotica",
     location: "Tragad",
     year: 2025,
-    image: "https://images.unsplash.com/photo-1572120360610-d971b9b78830",
+    image: "https://ganeshhousing.com/assets/main/images/malabar_exotica.jpg",
     description : "Malabar Exotica is a 3.5BHK turnkey project (1180 sq ft) in Tragad where we crafted functional and elegant interiors to maximize space and comfort."
   },
   {
