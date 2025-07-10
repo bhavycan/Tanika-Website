@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useIsMobile from "../../hooks/useIsMobile";
+import { Link } from "react-router-dom";
+import { use } from "react";
+import { div } from "framer-motion/client";
 
 const StepPart = () => {
   const [ishover, sethover] = useState(null);
   const isMobile = useIsMobile();
-
+  const [isopen, setopen] = useState(false)
  const flats = [
   {
     name: "Avani Prastha",
@@ -107,10 +110,20 @@ const StepPart = () => {
   }
 ];
 
+  useEffect(()=>{
+    if(isopen){
+      window.addEventListener("scroll", (e)=>{
+          setopen(!isopen)
+      })
+    }
+
+  },[isopen])
 
   return (
+    
     <section className={`main w-full  mb-[20vh] flex flex-col`}>
       {flats.map((item, index) => (
+        <Link onClick={()=>{setopen(!isopen)}}>
         <motion.article
           key={index}
           onHoverStart={() => sethover(index)}
@@ -179,7 +192,15 @@ const StepPart = () => {
             </motion.div>
           )}
         </motion.article>
+        </Link>
       ))}
+      {isopen && (
+        <div className="w-[100%] h-[100%] top-0 left-0 bg-gradient-to-bl pointer-events-none from-neutral-500 to-transparent  fixed flex items-center justify-center z-30">
+          <div className={` ${isMobile ? "w-[80%] h-[10%]" : "w-[50%] h-[10%]"} backdrop-blur-lg z-50  rounded-md flex items-center justify-center `}>
+            <h3 className={`text-[2vw] ${isMobile ? "text-[5vw] text-center " : "text-[2vw]"} font-serif `}>Images are expected to be made available shortly.</h3>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
