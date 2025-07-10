@@ -11,98 +11,98 @@ const StepPart = () => {
     name: "Avani Prastha",
     location: "Sargasan Gandhinagar",
     year: 2024,
-    image: "https://imgs.search.brave.com/5uyKtOdoTjL0x_sOsq_diewaUbonjCgxic5sw5-WKms/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/dml2YWFucmVhbHR5/LmNvbS9pbWFnZXMv/YWJvdXQtaG9tZS53/ZWJw",
+    image: "/images/projectimages/AvaniPrastha.webp",
     description: "Avani Prastha is a luxurious 3BHK turnkey project (1210–1220 sq ft) where we delivered complete interior solutions with elegant and functional design."
   },
   {
     name: "Ganesh Pride",
     location: "Vaishnodevi Circle",
     year: 2024,
-    image: "https://ganeshhousing.com/assets/main/images/malabar_retreat.jpg",
+    image: "/images/projectimages/GaneshPride.webp",
     description : "Ganesh Pride is a 3BHK turnkey project (786 sq ft) where we executed full interior work with a focus on modern, spacious, and practical design."
   },
   {
     name: "Infinity Luxuria",
     location: "Science City",
     year: 2024,
-    image: "https://ganeshhousing.com/assets/main/images/projects/sundarvan-epitome.jpg",
+    image: "/images/projectimages/InfinityLuxuria.webp",
     description : "Infinity Luxuria is a premium 3BHK turnkey project (1465 sq ft) in Science City where we crafted elegant interiors that reflect spacious luxury and high-end finishes."
   },
   {
     name: "Astha Onyx",
     location: "Bhuyangdev",
     year: 2025,
-    image: "https://images.unsplash.com/photo-1565182999561-18d7dc61bb0b",
+    image: "/images/projectimages/AsthaOnyx.webp",
     description : "Astha Onyx is a 3BHK turnkey project (1154 sq ft) in Bhuyangdev where we delivered refined interior solutions that maximize space, style, and comfort."
   },
   {
     name: "Indraprasth Green",
     location: "Satellite",
     year: 2024,
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    image: "/images/projectimages/IndraprasthGreen.webp",
       description : "Indraprasth Green is a 3BHK turnkey project (1130 sq ft) in Satellite where we provided complete interior work focused on modern aesthetics and efficient space utilization."
   },
   {
     name: "Chharodi Village",
     location: "Chharodi Village",
     year: 2024,
-    image: "https://images.unsplash.com/photo-1599423300746-b62533397364",
+    image: "/images/projectimages/chharodi.webp",
     description : "A premium 4BHK bungalow in the heart of Chharodi Village, designed and executed with elegant interiors spanning over 3000 sq ft, blending luxury with spacious comfort."
   },
   {
     name: "Aristo Alayam",
     location: "Gota",
     year: 2025,
-    image: "https://images.unsplash.com/photo-1501183638710-841dd1904471",
+    image: "/images/projectimages/AristoAlayam.webp",
     description : "Aristo Alayam is a spacious 3BHK turnkey project (1191 sq ft) in Gota where we delivered high-end interior solutions combining luxury and functionality."
   },
   {
     name: "Atharv Landmark",
     location: "Chenpur",
     year: 2024,
-    image: "https://ganeshhousing.com/assets/main/images/projects/satva.jpg",
+    image: "/images/projectimages/AtharvLandmark.webp",
     description : "Atharv Landmark is a 2BHK turnkey project (1224 sq ft) in Chenpur where we provided stylish and efficient interior design solutions tailored for comfortable living."
   },
   {
     name: "Malabar Exotica",
     location: "Tragad",
     year: 2025,
-    image: "https://ganeshhousing.com/assets/main/images/malabar_exotica.jpg",
+    image: "/images/projectimages/MalabarExotica.webp",
     description : "Malabar Exotica is a 3.5BHK turnkey project (1180 sq ft) in Tragad where we crafted functional and elegant interiors to maximize space and comfort."
   },
   {
     name: "Aristo Anandam",
     location: "Tragad",
     year: 2024,
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    image: "/images/projectimages/AristoAnandam.webp",
     description : "Aristo Anandam is a 3BHK turnkey project (956 sq ft) in Tragad where we delivered smart and stylish interior solutions focused on optimizing space and enhancing comfort."
   },
   {
     name: "Parmeshwar Nilayam",
     location: "Tragad",
     year: 2024,
-    image: "https://images.unsplash.com/photo-1599423300746-b62533397364",
+    image: "/images/projectimages/ParmeshwarNilayam.webp",
     description : "Parmeshwar Nilayam is a 3BHK turnkey project (1899 sq ft) in Tragad where we designed and executed elegant interiors that combine spaciousness with modern living comforts."
   },
   {
     name: "Avikam Giriraj",
     location: "Zundal",
     year: 2025,
-    image: "https://images.unsplash.com/photo-1501183638710-841dd1904471",
+    image: "/images/projectimages/AvikamGiriraj.webp",
     description : "Avikam Giriraj is a 3BHK turnkey project (848.97 sq ft) in Zundal where we delivered compact yet thoughtfully designed interiors that balance functionality with style."
   },
   {
     name: "Atulyam",
     location: "Raysan Gandhinagar",
     year: 2025,
-    image: "https://images.unsplash.com/photo-1501183638710-841dd1904471",
+    image: "/images/projectimages/Atulyam.webp",
     description : "Atulyam is a 3BHK turnkey project (2295 sq ft) in Raysan, Gandhinagar where we executed luxurious and spacious interiors tailored for elegant and modern living."
   },
   {
     name: "Mahadev parisar",
     location: "Vijapur",
     year: 2025,
-    image: "https://images.unsplash.com/photo-1501183638710-841dd1904471",
+    image: "/images/projectimages/Mahadevparisar.webp",
     description : "Mahadev Parisar is a 2900 sq ft bungalow in Vijapur where we designed and executed premium interiors that reflect elegance, comfort, and spacious living."
   }
 ];

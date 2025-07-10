@@ -17,7 +17,7 @@ const Process = () => {
         end: isMobile ? 'bottom 90%' : 'bottom -300%',
         scrub: true,
         pin: true,
-        markers: true,
+        markers: false,
       },
     });
 

@@ -1,7 +1,8 @@
 import gsap, { ScrollTrigger } from "gsap/all";
 import { motion } from "motion/react";
-import React, { useEffect, useRef } from "react";
+import React, { useDebugValue, useEffect, useRef } from "react";
 import useIsMobile from "../hooks/useIsMobile";
+import { figure } from "framer-motion/client";
 
 const Contact = () => {
   const mobileName = ["Contact", "Us"];
@@ -44,32 +45,33 @@ const Contact = () => {
     <main
       ref={parent}
       className={`${
-        isMobile ? "w-[200%] h-[100vh]" : "w-[200%] h-[100vh]"
+        isMobile ? "w-[200%] h-[100vh] " : "w-[200%] h-[100vh]"
       } overflow-hidden text-black mt-20 flex`}
     >
       <section
         className={`imagecontainer px-5 pt-5 pb-8 ${
           isMobile ? "w-[100%] h-full" : "w-[200%] h-full"
         }`}
-        aria-hidden={isMobile ? "true" : "false"} // Hide image for screen readers on mobile since replaced
+        aria-hidden={isMobile ? "true" : "false"} 
       >
         {!isMobile && (
+          
           <img
             loading="lazy"
-            className="w-full h-[100%] -z-10 object-cover"
+            className="w-full h-full -z-10 object-cover"
             src="/images/contact.png"
             alt="Contact related design or background"
           />
         )}
         {isMobile && (
-          <div className="w-[50%] h-full top-5 pt-5 pb-8 absolute z-10">
+          <div className="w-[50%] h-full top-0 pt-5 pb-8 absolute z-10">
             <div className="w-[90%] h-[65vh] flex items-center justify-center relative">
               <motion.img
                 loading="lazy"
                 initial={{ scale: 2 }}
                 whileInView={{ scale: 1 }}
                 transition={{ duration: 1 }}
-                className="w-[80%] h-full object-cover absolute"
+                className="w-[80%] h-full object-contain absolute"
                 src="./images/mobile.png"
                 alt="Mobile contact illustration"
               />
@@ -166,6 +168,12 @@ const Contact = () => {
             >
               +91 8200114400
             </a>
+            <i
+              className={`ri-phone-fill ${
+                isMobile ? "text-[6vw]" : "text-[2vw]"
+              }`}
+              aria-hidden="true"
+            ></i>
             <a
               href="tel:+917383838877"
               className="text-xl w-full font-semibold opacity-50"
