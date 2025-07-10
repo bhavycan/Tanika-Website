@@ -65,7 +65,7 @@ const SubPartners = () => {
 
     const timeout = setTimeout(() => {
       setActiveIndex(null);
-    }, 2000);
+    }, 4000);
 
     window.addEventListener("click", handleClickOutside);
     return () => {
