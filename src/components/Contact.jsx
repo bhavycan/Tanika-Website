@@ -59,7 +59,7 @@ const Contact = () => {
           <img
             loading="lazy"
             className="w-full h-full -z-10 object-cover"
-            src="/images/contact.png"
+            src="/images/contact.webp"
             alt="Contact related design or background"
           />
         )}

@@ -22,7 +22,7 @@ const About = () => {
       >
         <img 
           className="img w-full h-full object-cover" 
-          src="/images/about.png" 
+          src="/images/about.webp" 
           alt="About us" 
         />
       </motion.figure>

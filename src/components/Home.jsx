@@ -98,7 +98,7 @@ const Home = () => {
           </div>
 
           <div className={`logo absolute ${isMobile ? "left-1/2 -translate-x-1/2 top-12 w-24 h-24" : "left-[45%] top-10 w-32 h-32"}`}>
-            <img className="w-full h-full object-cover" src="/images/logo.png" alt="" />
+            <img className="w-full h-full object-cover" src="/images/logo.webp" alt="" />
           </div>
 
           <motion.nav
