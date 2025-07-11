@@ -186,7 +186,7 @@ const StepPart = () => {
                 
               }}
               transition={{duration : .5, delay : .1}}
-              className="z-20 card w-[25vw] absolute rounded-md overflow-hidden shadow-2xl h-[35vw] left-[53%] bg-red-800"
+              className="z-20 card w-[25vw] absolute rounded-md overflow-hidden shadow-2xl h-[35vw] left-[53%] "
             >
               <img loading="lazy" src={item.image} alt={`${item.name} building`} className="w-full h-full object-cover" />
             </motion.div>
