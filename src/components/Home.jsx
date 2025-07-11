@@ -7,6 +7,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 import useIsMobile from "../hooks/useIsMobile";
 import Loading from "./Loading";
 
+
 const Home = () => {
   const isMobile = useIsMobile();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -156,7 +157,10 @@ const Home = () => {
                   </div>
                 </div>
               ) : (
-                <TypingHeading pcheading={pcheading} />
+                <div className="w-full h-[9vw]">
+                   <TypingHeading pcheading={pcheading} />
+                </div>
+               
               )}
             </motion.div>
           </div>

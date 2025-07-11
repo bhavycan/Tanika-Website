@@ -26,7 +26,7 @@ const TypingHeading = ({ pcheading }) => {
   return (
     <section 
       aria-label="Typing heading"
-      className="text-[9vw] h-[20vh] font-serif flex items-center justify-center"
+      className="text-[9vw] h-[100%] font-serif  flex items-center justify-center"
     >
       <motion.h1
         initial={{ opacity: 0 }}
@@ -39,7 +39,7 @@ const TypingHeading = ({ pcheading }) => {
           aria-hidden="true"
           animate={{ opacity: [0, 1, 0] }}
           transition={{ repeat: Infinity, duration: 1 }}
-          className="inline-block"
+          className="inline-block   "
         >
           |
         </motion.span>
