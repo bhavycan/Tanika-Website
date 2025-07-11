@@ -85,7 +85,7 @@ const Home = () => {
         >
           <img
             className={`${isMobile ? "object-cover object-[30%_75%]" : "object-cover"} w-full h-full relative`}
-            src="/images/livingroom.png"
+            src="/images/livingroom.webp"
             alt=""
             loading="lazy"
           />
