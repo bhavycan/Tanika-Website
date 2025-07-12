@@ -32,7 +32,7 @@ const QuestionCard = ({ card }) => {
           className="absolute w-full h-full backface-hidden shadow-2xl px-2 py-2 text-center flex items-center justify-center rounded-lg overflow-hidden text-white text-xl font-['font123'] font-bold"
           style={{ backfaceVisibility: 'hidden' }}
         >
-          <figure className="image-container absolute w-full -z-10 h-full overflow-hidden">
+          <figure className="image-container absolute w-fuvll -z-10 h-full overflow-hidden">
             <img
               className="w-full h-full object-cover"
               loading="lazy"
