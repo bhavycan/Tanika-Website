@@ -1,11 +1,16 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
 import useIsMobile from "../hooks/useIsMobile";
-
 const Menubar = ({ menuOpen, setMenuOpen }) => {
   const pageName = ["Portfolio", "Services", "Partners", "FAQs"];
   const isMobile = useIsMobile();
+    const audio = useMemo(() => new Audio('/audio/navclick.mp3'), [])
+  
+    const playSound = () => {
+      audio.currentTime = 0 
+      audio.play()
+    }
 
   // simpler slicer using Array.from
   const slicer = (name) => Array.from(name);
@@ -34,7 +39,7 @@ const Menubar = ({ menuOpen, setMenuOpen }) => {
         <motion.div
           role="button"
           tabIndex={0}
-          onClick={() => setMenuOpen(false)}
+          onClick={() => {setMenuOpen(false); playSound()}}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
               setMenuOpen(false);

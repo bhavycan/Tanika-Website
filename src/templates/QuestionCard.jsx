@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import useIsMobile from '../hooks/useIsMobile'
+
 
 const QuestionCard = ({ card }) => {
   const [isFlipped, setFlipped] = useState(false)
@@ -10,12 +11,19 @@ const QuestionCard = ({ card }) => {
     setFlipped(prev => !prev)
   }
 
+     const audio = useMemo(() => {const sound = new Audio('/audio/cardflip.mp3'); sound.volume = 0.3; return sound}, [])
+
+  const playSound = () => {
+    audio.currentTime = 0 
+    audio.play()
+  }
+
   return (
     <article
       role="button"
       tabIndex={0}
       aria-pressed={isFlipped}
-      onClick={handleClick}
+      onClick={() => {handleClick(), playSound()}}
       onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleClick() }}
       className={`rounded-lg ${isMobile ? 'w-[80%] h-[50vh]' : 'w-[20%] h-[50vh]'} relative cursor-pointer`}
       style={{ perspective: '1000px' }}

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import useIsMobile from '../../hooks/useIsMobile';
 
 const SubPartners = () => {
@@ -53,7 +53,12 @@ const SubPartners = () => {
 
   const isMobile = useIsMobile();
   const [activeIndex, setActiveIndex] = useState(null);
-
+  const audio = useMemo(()=> {const sound = new Audio('/audio/cardflip.mp3'); sound.volume = 0.3; return sound},[])
+  const playSound = ()=>
+  {
+    audio.currentTime = 0;
+    audio.play()
+  }
   useEffect(() => {
     if (activeIndex === null) return;
 
@@ -92,7 +97,7 @@ const SubPartners = () => {
               role="button"
               tabIndex={0}
               aria-pressed={isActive}
-              onClick={() => setActiveIndex(index)}
+              onClick={() => {setActiveIndex(index); playSound()}}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
                   setActiveIndex(index);

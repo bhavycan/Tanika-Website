@@ -7,7 +7,8 @@ import useIsMobile from '../../hooks/useIsMobile';
 const Qna = () => {
 
    const isMobile = useIsMobile();
-    
+   
+   
 const faqs = [
   {
     front: "Can you visit my home for a design consultation?",
@@ -71,7 +72,7 @@ const faqs = [
         className={`question-card-container  ${isMobile ? "flex-col gap-5" : "flex-wrap gap-5 flex-shrink-0"} w-[100%]  flex items-center justify-center  relative min-h-[100vh] mb-[2%]`}>
           {faqs.map((item,index)=>{
             return(
-              <QuestionCard card={item} />
+              <QuestionCard  card={item} />
             )
           })}
             

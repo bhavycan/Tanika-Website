@@ -1,6 +1,7 @@
 import { animate, easeInOut, motion } from 'framer-motion';
-import React from 'react';
+import React, { useMemo } from 'react';
 import useIsMobile from '../hooks/useIsMobile';
+
 
 const BuildCard = ({ card, constraints }) => {
   const isMobile = useIsMobile();
@@ -13,6 +14,15 @@ const BuildCard = ({ card, constraints }) => {
       : card.rotate + card.id * -4,
   };
 
+
+    const audio = useMemo(() => { const sound = new Audio('/audio/wind.mp3'); sound.volume = 0.3; return sound}, []);
+  
+    const playSound = () => {
+      audio.currentTime = 0;
+      audio.play();
+    };
+  
+
   return (
     <motion.article
       role="group"
@@ -21,6 +31,7 @@ const BuildCard = ({ card, constraints }) => {
       dragElastic={0.3}
       dragConstraints={constraints}
       whileDrag={{ scale: 1.05, zIndex: 999 }}
+      onDrag={()=>{playSound()}}
       initial={{ x: 0, y: 0, rotate: card.rotate }}
       whileInView={animatesParams}
       transition={{ duration: 1, delay: 0.1 * card.id, ease: easeInOut }}

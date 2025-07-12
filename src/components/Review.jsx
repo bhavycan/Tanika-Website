@@ -1,6 +1,6 @@
 import { mirrorEasing } from "motion";
 import { AnimatePresence, motion } from "motion/react";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import Card from "../templates/Card";
 import { image } from "motion/react-client";
 import useIsMobile from "../hooks/useIsMobile";
@@ -51,6 +51,18 @@ const reviews = [
   let intervalRef = useRef(null);
   const selectionRef = useRef(null);
   const isMobile = useIsMobile()
+      const audio = useMemo(() => {
+        
+        const sound = new Audio('/audio/wind.mp3')
+        sound.volume = 0.3;
+        return  sound
+        }, []);
+    
+      const playSound = () => {
+        audio.currentTime = 0;
+        audio.play();
+      };
+    
   
 
   useEffect(() => {
@@ -141,6 +153,7 @@ const reviews = [
                   whileHover={{ rotate: 0 }}
                   whileTap={isMobile ? { zIndex: 100, rotate: 0 } : {}}
                   drag
+                  onDrag={()=>{playSound()}}
                   dragConstraints={constraintsRef}
                   className={`card w-[70%] ${isMobile ? "h-[80%]" : "h-[90%]"}  rounded-xl bg-zinc-100 shadow-2xl px-3 py-6 absolute`}
                   style={{ zIndex: card.length + index }}
